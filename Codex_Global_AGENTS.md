@@ -15,6 +15,8 @@
 - Code should be made reusable/shareable whenever possible. Avoid copy-pasting nearly identical code to multiple places when you could make it a shared method/field/etc. instead.
 - Projects (code, classes, packages, etc.) should always be well-structured and organized, with great focus on easy maintainability. The project should be easy to understand and maintain for new devs later.
 - Avoid god classes. Split large classes into organized and well-structured smaller classes.
+- Do not create new helper classes just to share code between tests and normal code. If you would need to do that, simply make it a temporary test that copies the exact code you want to test, and then remove the test after.
+- Split classes in a way that makes sense. Do not split them just for the sake of splitting them. Don't create 20 new helper classes with one method each, split them in a reasonable and logical way.
 - Avoid spanning method heads and method calls over multiple lines, no matter how long they are. One line per method head and method call.
 - Always document fragile parts of the code that could break easily when handled wrong. Explain what they do and what is important for them.
 - Always document code that could look a bit hacky, weird, or even useless at first look. Explain what the code does, why it is there, and what is important to note for it.
@@ -32,6 +34,6 @@
 - NEVER switch the active branch unless the user explicitly tells you to do so!
 
 ## Subagents
-- Always spawn ALL your subagents with the gpt-5.6 (Sol) model on "max" reasoning effort.
+- Always spawn ALL your subagents with the gpt-5.6 (Sol) model on "xhigh" reasoning effort.
 - Always spawn ALL your subagents with a CLEAN context (do not give them your context), so they have a clean context for doing their task in the best possible way.
 - Since you spawn subagents without context, make sure to properly explain everything important to them, because they do not have your memories.
