@@ -1,4 +1,4 @@
-Please backport all commits from `3f2efb0c6f84209dd16596a1c4728228d0a1f442` to `f3a88200db82139c57af73e999173e5c8fb06536` (including these two) from the `26.2.0` branch to all other sub-workspaces (26.1.2, 1.21.11, 1.21.1, 1.20.1, 1.19.2).
+Please backport all commits from `3f2efb0c6f84209dd16596a1c4728228d0a1f442` to `f3a88200db82139c57af73e999173e5c8fb06536` (including these two) from the `26.2.0` branch to all other sub-workspaces (26.1.2, 1.21.11, 1.21.1, 1.20.1, 1.19.2). Only backport `26.2.0` commits!
 
 Make sure to properly backport each commit, while respecting potential changes in surrounding code (Minecraft Vanilla code changes, dependency code changes, etc.). Take your time, don't rush it.
 
