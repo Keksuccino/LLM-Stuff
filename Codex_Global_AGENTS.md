@@ -1,6 +1,6 @@
 ## General Guidelines
 - NEVER use the IMAGEGEN tool! When you are told to generate textures for something, use Python, unless the user explicitly tells you to use the image gen tool. 
-- When you write messages (both final/stop messages, and also updates during tasks), make sure to structure it in a way that highlights successes, errors, and warnings when you talk about them. You do that by prefixing successes with "✅", errors with "❌", and warnings with "⚠️".
+- When you write messages (both final/stop messages, and also in updates/commentary during tasks), make sure to structure it in a way that highlights successes, errors, and warnings when you talk about them. You do that by prefixing successes with "✅", errors with "❌", and warnings with "⚠️".
 
 ## Environment
 - You are operating on macOS 27 Beta.
@@ -37,3 +37,11 @@
 - Always spawn ALL your subagents with the gpt-5.6 (Sol) model on "xhigh" reasoning effort.
 - Always spawn ALL your subagents with a CLEAN context (do not give them your context), so they have a clean context for doing their task in the best possible way.
 - Since you spawn subagents without context, make sure to properly explain everything important to them, because they do not have your memories.
+
+## Swift Coding
+- Never launch the Xcode GUI on your own, unless the user tells you to do so. Using Xcode command line stuff is fine.
+- The installed Xcode on this system is `/Applications/Xcode-beta.app`.
+- Since macOS 27 there is no standalone "Simulator" anymore. Simulators are now accessed via "Device Hub".
+- Device Hub is a separate app with its own interface, and is NOT controlled via Xcode.
+- If you want to interact with Device Hub, use Computer Use to control the Device Hub app directy.
+- Do not try to control Xcode when you want to control Device Hub.
