@@ -20,6 +20,7 @@
 - Avoid spanning method heads and method calls over multiple lines, no matter how long they are. One line per method head and method call.
 - Always document fragile parts of the code that could break easily when handled wrong. Explain what they do and what is important for them.
 - Always document code that could look a bit hacky, weird, or even useless at first look. Explain what the code does, why it is there, and what is important to note for it.
+- Do not mindlessly comment/document everything in code. Do not spam documentation. Add docs/comments when useful, not just for the sake of adding it.
 
 ## Workflow Guidelines
 - Do not simply implement things without a second thought. Simulate in your reasoning STEP-BY-STEP what each step of the execution chain of the code you implemented does, where it does something, and what could be side effects of it. Chase the whole code execution chain step-by-step, to notice edge cases, incomplete implementations, bugs, etc.
@@ -29,20 +30,25 @@
 - You can add temporary testing code to projects. Make sure to remove that testing code after.
 - You always TRIPLE-CHECK EVERYTHING! When you are finishing a task, you triple-check everything for completeness, possible bad implementations, rushed implementations, performance, optimization, structurization, and so on.
 
-## Git
-- NEVER create new branches unless the user explicitly tells you to do so!
-- NEVER switch the active branch unless the user explicitly tells you to do so!
-
 ## Subagents
 - Always spawn ALL your subagents with the gpt-5.6 (Sol) model on "xhigh" reasoning effort.
 - Always spawn ALL your subagents with a CLEAN context (do not give them your context), so they have a clean context for doing their task in the best possible way.
 - Since you spawn subagents without context, make sure to properly explain everything important to them, because they do not have your memories.
+
+## Git
+- NEVER create new branches unless the user explicitly tells you to do so!
+- NEVER switch the active branch unless the user explicitly tells you to do so!
 
 ## Swift Coding
 - Never launch the Xcode GUI on your own, unless the user tells you to do so. Using Xcode command line stuff is fine.
 - The installed Xcode on this system is `/Applications/Xcode-beta.app`.
 - Since macOS 27 there is no standalone "Simulator" anymore. Simulators are now accessed via "Device Hub".
 - Device Hub is a separate app with its own interface, and is NOT controlled via Xcode.
-- If you want to interact with Device Hub, use Computer Use to control the Device Hub app directy.
+- If you want to interact with Device Hub, use Computer Use to control the Device Hub app directly.
 - Do not try to control Xcode when you want to control Device Hub.
 - Computer Use may time out while reading Device Hub’s simulator accessibility tree; do not assume Device Hub is stuck. Recognize this as a Computer Use accessibility-capture failure and retry Device Hub directly.
+
+## Java Coding
+- Always add one empty line after a class header line (e.g. `public final class SomeClass {` and then an empty line.
+- Always add one empty line before the closing bracket of a class (top-level `}`).
+- Never place multiple top-level classes in the same `.java` file. If you want to add more than one class in a `.java` file, make one top-level class and the other classes should be inner/nested classes of that top-level class.
