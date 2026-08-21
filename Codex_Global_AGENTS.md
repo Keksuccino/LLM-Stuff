@@ -53,3 +53,12 @@
 - Never place multiple top-level classes in the same `.java` file. If you want to add more than one class in a `.java` file, make one top-level class and the other classes should be inner/nested classes of that top-level class.
 - Never span method or class heads across multiple lines, no matter how long they are.
 - Do not span method calls across multiple lines if you would only do it because they are long. Only span them across multiple lines if they contain things that should naturally get written on multiple ones, like lambdas with a bigger body.
+
+## Java Minecraft Mod Mixin Coding
+- Make @Shadow methods abstract whenever possible (including making the Mixin class abstract in that case).
+- Place @Shadow methods at the top before normal Mixin methods and @Unique methods, but after all kinds of fields.
+- Place @Shadow fields before @Unique fields, with an empty line between the two groups of shadow and unique ones.
+- Place @Unique methods after all Mixin methods.
+- For @Shadow fields, place the @Shadow, @Mutable, and @Final annotations on the same line as the actual field. Do that only for fields, not for methods.
+- For @Accessor fields, place the annotation on the same line as the actual field, but don't do the same for @Invoker methods.
+- If a method is private in the original class and you want to @Shadow it, make the @Shadow method protected.
