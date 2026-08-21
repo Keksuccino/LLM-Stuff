@@ -54,7 +54,7 @@
 - Never span method or class heads across multiple lines, no matter how long they are.
 - Do not span method calls across multiple lines if you would only do it because they are long. Only span them across multiple lines if they contain things that should naturally get written on multiple ones, like lambdas with a bigger body.
 
-## Java Minecraft Mod Mixin Coding
+## Java Minecraft Mod Coding: Mixin
 - Make @Shadow methods abstract whenever possible (including making the Mixin class abstract in that case).
 - Place @Shadow methods at the top before normal Mixin methods and @Unique methods, but after all kinds of fields.
 - Place @Shadow fields before @Unique fields, with an empty line between the two groups of shadow and unique ones.
