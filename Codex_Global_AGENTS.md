@@ -44,8 +44,6 @@
 - Since macOS 27 there is no standalone "Simulator" anymore. Simulators are now accessed via "Device Hub".
 - Device Hub is a separate app with its own interface, and is NOT controlled via Xcode.
 - If you want to interact with Device Hub, use Computer Use to control the Device Hub app directly.
-- Do not try to control Xcode when you want to control Device Hub.
-- Computer Use may time out while reading Device Hub’s simulator accessibility tree; do not assume Device Hub is stuck. Recognize this as a Computer Use accessibility-capture failure and retry Device Hub directly.
 
 ## Java Coding
 - Always add one empty line after a class header line (e.g. `public final class SomeClass {` and then an empty line.
