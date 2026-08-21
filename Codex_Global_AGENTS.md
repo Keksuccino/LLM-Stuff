@@ -51,6 +51,8 @@
 - Never place multiple top-level classes in the same `.java` file. If you want to add more than one class in a `.java` file, make one top-level class and the other classes should be inner/nested classes of that top-level class.
 - Never span method or class heads across multiple lines, no matter how long they are.
 - Do not span method calls across multiple lines if you would only do it because they are long. Only span them across multiple lines if they contain things that should naturally get written on multiple ones, like lambdas with a bigger body.
+- Prefer explicit nullability annotations from `jsr305`.
+- Java code should be written with 4-space indentation and UTF-8 encoding (WITHOUT BOM).
 
 ## Java Minecraft Mod Coding: Mixin
 - Make @Shadow methods abstract whenever possible (including making the Mixin class abstract in that case).
@@ -60,3 +62,13 @@
 - For @Shadow fields, place the @Shadow, @Mutable, and @Final annotations on the same line as the actual field. Do that only for fields, not for methods.
 - For @Accessor fields, place the annotation on the same line as the actual field, but don't do the same for @Invoker methods.
 - If a method is private in the original class and you want to @Shadow it, make the @Shadow method protected.
+- All mod projects always have access to Mixin Extras.
+- Prefer using features from Mixin Extras instead of using normal Mixin redirects or overrides.
+- Use short `//` comments for quick reminders and `/** @reason ... */` blocks ahead of injections that change vanilla behavior.
+- Cluster related injections together (for example, all `setScreen` hooks in `MixinGui`).
+- When creating normal Mixin classes, call them `Mixin<OriginalClassName>`, so for the `Minecraft` class that would be `MixinMinecraft`.
+- When creating Mixin accessor interfaces, name them `AccessorMixin<OriginalClassName>`, so for the `Minecraft` class that would be `AccessorMixinMinecraft`.
+- When you make Mixin classes extend the superclass of the target class, add a dummy constructor if needed.
+- Keep Mixin classes lightweight.
+- You can't nest classes or interfaces in Mixin classes. You need to place them outside Mixin classes.
+- You can't place non-Mixin classes/interfaces in packages declared as "Mixin packages". You need to place them outside these packages.
