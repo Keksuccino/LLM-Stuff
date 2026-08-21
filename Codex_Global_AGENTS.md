@@ -17,7 +17,6 @@
 - Avoid god classes. Split large classes into organized and well-structured smaller classes.
 - Do not create new helper classes just to share code between tests and normal code. If you would need to do that, simply make it a temporary test that copies the exact code you want to test, and then remove the test after.
 - Split classes in a way that makes sense. Do not split them just for the sake of splitting them. Don't create 20 new helper classes with one method each, split them in a reasonable and logical way.
-- Avoid spanning method heads and method calls over multiple lines, no matter how long they are. One line per method head and method call.
 - Always document fragile parts of the code that could break easily when handled wrong. Explain what they do and what is important for them.
 - Always document code that could look a bit hacky, weird, or even useless at first look. Explain what the code does, why it is there, and what is important to note for it.
 - Do not mindlessly comment/document everything in code. Do not spam documentation. Add docs/comments when useful, not just for the sake of adding it.
@@ -52,3 +51,5 @@
 - Always add one empty line after a class header line (e.g. `public final class SomeClass {` and then an empty line.
 - Always add one empty line before the closing bracket of a class (top-level `}`).
 - Never place multiple top-level classes in the same `.java` file. If you want to add more than one class in a `.java` file, make one top-level class and the other classes should be inner/nested classes of that top-level class.
+- Never span method or class heads across multiple lines, no matter how long they are.
+- Do not span method calls across multiple lines if you would only do it because they are long. Only span them across multiple lines if they contain things that should naturally get written on multiple ones, like lambdas with a bigger body.
