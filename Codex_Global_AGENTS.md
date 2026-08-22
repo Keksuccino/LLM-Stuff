@@ -72,3 +72,4 @@
 - Keep Mixin classes lightweight.
 - You can't nest classes or interfaces in Mixin classes. You need to place them outside Mixin classes.
 - You can't place non-Mixin classes/interfaces in packages declared as "Mixin packages". You need to place them outside these packages.
+- Always check all methods and fields you reference/target in Mixin classes, to get their type, name, and method signature right.
