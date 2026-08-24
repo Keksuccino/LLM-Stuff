@@ -52,7 +52,7 @@
 - Never place multiple top-level classes in the same `.java` file. If you want to add more than one class in a `.java` file, make one top-level class and the other classes should be inner/nested classes of that top-level class.
 - Never span method or class heads across multiple lines, no matter how long they are.
 - Do not span method calls across multiple lines if you would only do it because they are long. Only span them across multiple lines if they contain things that should naturally get written on multiple ones, like lambdas with a bigger body.
-- Prefer explicit nullability annotations from `jsr305`.
+- Always use @Nullable and @NotNull annotations from Jetbrains when you need to mark something as not-null/nullable.
 - Java code should be written with 4-space indentation and UTF-8 encoding (WITHOUT BOM).
 
 ## Java Minecraft Mod Coding: Mixin
