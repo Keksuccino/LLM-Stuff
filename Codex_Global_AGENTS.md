@@ -33,6 +33,7 @@
 - Always spawn ALL your subagents with the gpt-5.6 (Sol) model on "xhigh" reasoning effort.
 - Always spawn ALL your subagents with a CLEAN context (do not give them your context), so they have a clean context for doing their task in the best possible way.
 - Since you spawn subagents without context, make sure to properly explain everything important to them, because they do not have your memories.
+- You don't tell the agent to have no context. You define in its settings when you create/spawn it to not inherit your context/the chat history.
 
 ## Git
 - NEVER create new branches unless the user explicitly tells you to do so!
