@@ -1,0 +1,5 @@
+interface:
+  display_name: "Publish Minecraft Mod Builds"
+
+policy:
+  allow_implicit_invocation: false
