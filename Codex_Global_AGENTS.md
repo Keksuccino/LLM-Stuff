@@ -55,6 +55,9 @@
 - Always use @Nullable and @NotNull annotations from Jetbrains when you need to mark something as not-null/nullable.
 - Java code should be written with 4-space indentation and UTF-8 encoding (WITHOUT BOM).
 
+## Java Minecraft Mod Coding: General
+- Bumping the mod version of a Minecraft mod project always means bumping the mod version in `gradle.properties` and in the mod's main class that contains the `VERSION` constant.
+
 ## Java Minecraft Mod Coding: Mixin
 - Make @Shadow methods abstract whenever possible (including making the Mixin class abstract in that case).
 - Place @Shadow methods at the top before normal Mixin methods and @Unique methods, but after all kinds of fields.
