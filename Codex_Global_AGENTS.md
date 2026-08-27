@@ -28,6 +28,7 @@
 - Always clean up after yourself! When finishing a task, remove leftover code from testing, code from earlier unsuccessful implementation attempts, and dead code.
 - You can add temporary testing code to projects. Make sure to remove that testing code after.
 - You always TRIPLE-CHECK EVERYTHING! When you are finishing a task, you triple-check everything for completeness, possible bad implementations, rushed implementations, performance, optimization, structurization, and so on.
+- When you get a GitHub issue, never read it via your normal web fetch/search tools, because these give you a cached website instead of the live content. Use other ways to read the actual current state of the issue with all its comments.
 
 ## Subagents
 - Always spawn ALL your subagents with the gpt-5.6 (Sol) model on "xhigh" reasoning effort.
