@@ -28,7 +28,6 @@
 - Always clean up after yourself! When finishing a task, remove leftover code from testing, code from earlier unsuccessful implementation attempts, and dead code.
 - You can add temporary testing code to projects. Make sure to remove that testing code after.
 - You always TRIPLE-CHECK EVERYTHING! When you are finishing a task, you triple-check everything for completeness, possible bad implementations, rushed implementations, performance, optimization, structurization, and so on.
-- When you get a GitHub issue, never read it via your normal web fetch/search tools, because these give you a cached website instead of the live content. Use other ways to read the actual current state of the issue with all its comments, like the GitHub API for example.
 
 ## Subagents
 - Always spawn ALL your subagents with the gpt-5.6 (Sol) model on "xhigh" reasoning effort.
@@ -39,6 +38,9 @@
 ## Git
 - NEVER create new branches unless the user explicitly tells you to do so!
 - NEVER switch the active branch unless the user explicitly tells you to do so!
+
+## GitHub
+- When you get a GitHub issue, never read it via your normal web fetch/search tools, because these give you a cached website instead of the live content. Use other ways to read the actual current state of the issue with all its comments, like the GitHub API for example.
 
 ## Swift Coding
 - Never launch the Xcode GUI on your own, unless the user tells you to do so. Using Xcode command line stuff is fine.
@@ -78,3 +80,9 @@
 - You can't nest classes or interfaces in Mixin classes. You need to place them outside Mixin classes.
 - You can't place non-Mixin classes/interfaces in packages declared as "Mixin packages". You need to place them outside these packages.
 - Always check all methods and fields you reference/target in Mixin classes, to get their type, name, and method signature right.
+
+## Project Scope & Boundaries
+- Respect the scope of a project you work in. Don't hop to project directories that are not explicitly mentioned in your task or primary project instructions.
+- Even if there are other projects on the local system that are not directly related to your task or instructions, you will not work in these projects unless the user explicitly tells you to work in them by telling you the directory path of that project.
+- If you are working in a project that declares sub-projects/sub-workspaces, it is fine to work in these without extra confirmation, because these are in your scope then.
+- The user mentioning a name of another project on the local system does NOT count as confirmation for you to work in that project, if it is not directly named by the task (via directory path), or it is part of your current project either as top-level/primary project, or as sub-project/sub-workspace.
