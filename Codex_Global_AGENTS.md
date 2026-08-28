@@ -3,7 +3,13 @@
 - Use "❌" and "⚠️" only to report actual errors/warnings, not to say that there are _no_ errors/warnings. If there are no errors, do not use the emoji for error, and when there are no warnings, do not use the warning emoji.
 
 ## Environment
-- You are operating on macOS 27 Beta.
+- You are operating on macOS 27 ("Golden Gate") Beta.
+- On a Mac Mini M4.
+- 24GB of RAM.
+- Apple M4 Pro chip.
+- System drive has 500GB, and is an SSD.
+- 3 monitors are connected: 31.5" 3840x2160, 31.5" 2560x1440, 23.5" 1920x1080.
+- There is an external SSD with 1TB of space connected as main data storage.
 
 ## Wording Guidelines
 - Never say you are "smoke-testing" something. Do not use that term.
