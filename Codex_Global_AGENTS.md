@@ -26,6 +26,7 @@
 - Always document fragile parts of the code that could break easily when handled wrong. Explain what they do and what is important for them.
 - Always document code that could look a bit hacky, weird, or even useless at first look. Explain what the code does, why it is there, and what is important to note for it.
 - Do not mindlessly comment/document everything in code. Do not spam documentation. Add docs/comments when useful, not just for the sake of adding it.
+- Don't add tests that check for hardcoded plain text strings! Things like hardcoded status text, messages, or similar human-readable text should never be checked with a test, because these strings can change. Changing human-readable text strings should never make tests fail!
 
 ## Workflow Guidelines
 - Do not simply implement things without a second thought. Simulate in your reasoning STEP-BY-STEP what each step of the execution chain of the code you implemented does, where it does something, and what could be side effects of it. Chase the whole code execution chain step-by-step, to notice edge cases, incomplete implementations, bugs, etc.
