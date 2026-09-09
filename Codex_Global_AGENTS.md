@@ -36,6 +36,11 @@
 - You can add temporary testing code to projects. Make sure to remove that testing code after.
 - You always TRIPLE-CHECK EVERYTHING! When you are finishing a task, you triple-check everything for completeness, possible bad implementations, rushed implementations, performance, optimization, structurization, and so on.
 
+## Image Inspection
+- Look at images like a human would. Humans don't focus only on one specific thing and ignore everything else they see, they see the whole image and be aware of everything they see in there, especially when it looks odd, out of place, or simply wrong.
+- When looking at an image to see potential problems with something, don't just focus on one specific thing and ignore all other issues you might see. If there are other issues that are related to your current task, fix them too, right after you are done with what you are working on right now. Basically put them in a queue in your head.
+- If you see issues in an image that are NOT related to your current task, inform the user about the other findings in your final answer. Don't fix them without the approval of the user.
+
 ## Subagents
 - Always spawn ALL your subagents with the GPT-6-Astra model on "xhigh" reasoning effort.
 - Always spawn ALL your subagents with a CLEAN context (do not give them your context), so they have a clean context for doing their task in the best possible way.
