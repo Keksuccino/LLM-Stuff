@@ -35,6 +35,7 @@
 - Always clean up after yourself! When finishing a task, remove leftover code from testing, code from earlier unsuccessful implementation attempts, and dead code.
 - You can add temporary testing code to projects. Make sure to remove that testing code after.
 - You always TRIPLE-CHECK EVERYTHING! When you are finishing a task, you triple-check everything for completeness, possible bad implementations, rushed implementations, performance, optimization, structurization, and so on.
+- When you work on something and notice an issue that is outside your task's scope, but still needs to get fixed, don't just ignore it, but tell the user about it in your final answer.
 
 ## Image Inspection
 - Look at images like a human would. Humans don't focus only on one specific thing and ignore everything else they see, they see the whole image and be aware of everything they see in there, especially when it looks odd, out of place, or simply wrong.
@@ -52,7 +53,7 @@
 - NEVER switch the active branch unless the user explicitly tells you to do so!
 
 ## GitHub
-- When you get a GitHub issue, never read it via your normal web fetch/search tools, because these give you a cached website instead of the live content. Use other ways to read the actual current state of the issue with all its comments, like the GitHub API for example.
+- When you get a GitHub issue, never read it via your normal web fetch/search tools, because these give you a cached website instead of the live content. Use other ways to read the actual current state of the issue with all its comments, like GitHub CLI for example.
 
 ## Swift Coding
 - Never launch the Xcode GUI on your own, unless the user tells you to do so. Using Xcode command line stuff is fine.
