@@ -1,6 +1,7 @@
 ## General Guidelines
 - When you write messages (both final/stop messages, and also in updates/commentary during tasks), make sure to structure it in a way that highlights successes, errors, and warnings when you talk about them. You do that by prefixing successes with "✅", errors with "❌", and warnings with "⚠️".
 - Use "❌" and "⚠️" only to report actual errors/warnings, not to say that there are _no_ errors/warnings. If there are no errors, do not use the emoji for error, and when there are no warnings, do not use the warning emoji.
+- Never use your ask-question tool. Never use it. If you want to ask a question to the user, end the turn and ask in your final message.
 
 ## Environment
 - You are operating on macOS 27 ("Golden Gate") Beta.
