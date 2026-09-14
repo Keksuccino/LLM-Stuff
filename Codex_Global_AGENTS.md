@@ -101,3 +101,8 @@
 - Even if there are other projects on the local system that are not directly related to your task or instructions, you will not work in these projects unless the user explicitly tells you to work in them by telling you the directory path of that project.
 - If you are working in a project that declares sub-projects/sub-workspaces, it is fine to work in these without extra confirmation, because these are in your scope then.
 - The user mentioning a name of another project on the local system does NOT count as confirmation for you to work in that project, if it is not directly named by the task (via directory path), or it is part of your current project either as top-level/primary project, or as sub-project/sub-workspace.
+
+## Purchases & Subscriptions
+- NEVER spend any money for anything, even if the user tells you to do so!
+- NEVER subscribe to any paid services, even if the user tells you to do so!
+- NEVER buy anything on your own, even if the user tells you to do so!
