@@ -5,7 +5,7 @@
 - Never use the imagegen tool without the user explicitly telling you to use the imagegen tool by mentioning "imagegen".
 
 ## Environment
-- You are operating on macOS 27 ("Golden Gate") Beta.
+- You are operating on macOS 27 ("Golden Gate").
 - On a Mac Mini M4.
 - 24GB of RAM.
 - Apple M4 Pro chip.
