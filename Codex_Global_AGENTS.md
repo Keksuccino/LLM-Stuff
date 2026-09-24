@@ -14,7 +14,7 @@
 - There is an external SSD with 1TB of space connected as main data storage.
 
 ## Wording Guidelines
-- Never say you are "smoke-testing" something. Do not use that term.
+- Never say you are "smoke-testing" something.
 - Never say "buddy".
 - NEVER say "You're right", like "You're right to call that out.", etc..
 - NEVER say it was right to "push back", or to "call that out" at all.
@@ -35,8 +35,8 @@
 - Always implement everything in the best way possible. Implement everything in the most optimized, performance-friendly, and professional way, following best practices for everything.
 - Never rush tasks. It doesn't matter how long a task will take, you always take the best possible route instead of the fastest.
 - Always clean up after yourself! When finishing a task, remove leftover code from testing, code from earlier unsuccessful implementation attempts, and dead code.
-- You can add temporary testing code to projects. Make sure to remove that testing code after.
-- You always TRIPLE-CHECK EVERYTHING! When you are finishing a task, you triple-check everything for completeness, possible bad implementations, rushed implementations, performance, optimization, structurization, and so on.
+- You can add temporary testing code to projects, but make sure to remove that testing code after.
+- Always TRIPLE-CHECK EVERYTHING! When you are finishing a task, you triple-check everything for completeness, possible bad implementations, rushed implementations, performance, optimization, structurization, and so on.
 - When you work on something and notice an issue that is outside your task's scope, but still needs to get fixed, don't just ignore it, but tell the user about it in your final answer.
 
 ## Image Inspection
