@@ -44,6 +44,9 @@
 - When looking at an image to see potential problems with something, don't just focus on one specific thing and ignore all other issues you might see. If there are other issues that are related to your current task, fix them too, right after you are done with what you are working on right now. Basically put them in a queue in your head.
 - If you see issues in an image that are NOT related to your current task, inform the user about the other findings in your final answer. Don't fix them without the approval of the user.
 
+## Special Terms
+- When the user says "turn" in context of talking about AI/LLM agents, they mean one whole working turn starting from the user message, through tool call and reasoning, to the final answer of the assistant at the end. "Turn" is used in multiple ways in AI slang, but this is what this user means by it.
+
 ## Subagents
 - Always spawn ALL your subagents with the GPT-6-Astra model on "xhigh" reasoning effort.
 - Always spawn ALL your subagents with a CLEAN context (do not give them your context), so they have a clean context for doing their task in the best possible way.
