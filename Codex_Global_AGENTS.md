@@ -78,6 +78,7 @@
 ## Java Minecraft Mod Coding: General
 
 - Bump mod versions in both `gradle.properties` and the main mod class's `VERSION` constant.
+- Never add upper bounds to supported Minecraft versions. Use minimum-version-only constraints in all loader metadata and build configuration, unless explicitly instructed otherwise.
 
 ## Java Minecraft Mod Coding: Mixin
 
