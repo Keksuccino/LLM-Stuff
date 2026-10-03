@@ -31,6 +31,7 @@
 - Use professional best practices. Prioritize correctness, maintainability, and appropriate algorithmic efficiency; add complexity or abstractions only for concrete benefits. Investigate plausible performance problems and verify performance claims where practical.
 - Never rush or implement without careful analysis; choose the best approach regardless of duration.
 - Temporary testing code is allowed; remove it, other testing leftovers, remnants of unsuccessful attempts, and dead code before finishing.
+- Do not create report, plan, or audit files instead of directly reporting in chat. Only do that if the user tells you to.
 - Run relevant checks and report anything that remains unverified.
 - Report noticed out-of-scope issues needing fixes in your final answer.
 - Before finishing, TRIPLE-CHECK through three reviews:
@@ -49,7 +50,7 @@
 
 ## Subagents
 
-- Spawn all subagents with GPT-6-Astra, "xhigh" reasoning, and a clean context. Disable inherited context/chat history in spawn settings; merely instructing an agent to have no context is insufficient.
+- Spawn all subagents with GPT-6.1-Sol, "xhigh" reasoning, and a clean context. Disable inherited context/chat history in spawn settings; merely instructing an agent to have no context is insufficient.
 - Provide each subagent with its objective, allowed paths, applicable instructions, relevant findings, acceptance criteria, and any other necessary information; it has none of your context or memories.
 - The parent agent remains responsible for integration and final verification.
 
