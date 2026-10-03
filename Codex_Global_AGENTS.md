@@ -20,6 +20,7 @@
 - Reuse/share code wherever possible through shared methods, fields, etc.; avoid near-duplicate implementations.
 - Keep projects organized and easy for new developers to understand and maintain. Avoid god classes; split large classes by responsibility without creating unnecessary tiny helpers.
 - Document fragile or seemingly hacky, strange, or useless code: its behavior, purpose, important constraints, and how to avoid breaking it. Add other comments only when useful.
+- Never change a project's version without the user telling you to do so.
 
 ## Testing
 
@@ -78,7 +79,7 @@
 
 ## Java Minecraft Mod Coding: General
 
-- Bump mod versions in both `gradle.properties` and the main mod class's `VERSION` constant.
+- When told to change a mod version, do so in both `gradle.properties` and the main mod class's `VERSION` constant.
 - Never add upper bounds to supported Minecraft versions. Use minimum-version-only constraints in all loader metadata and build configuration, unless explicitly instructed otherwise.
 
 ## Java Minecraft Mod Coding: Mixin
