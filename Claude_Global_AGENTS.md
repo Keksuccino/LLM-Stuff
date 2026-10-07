@@ -28,10 +28,12 @@
 - Do not create report, plan, or audit files instead of directly reporting in chat. Only do that if the user tells you to.
 - Run relevant checks and report anything that remains unverified.
 - Report noticed out-of-scope issues needing fixes in your final answer.
-- Before finishing, TRIPLE-CHECK through three reviews:
-   1. **Correctness:** Trace the entire execution chain step by step—what happens, where, and with what side effects. Check edge cases, bugs, and incomplete implementations.
-   2. **Quality:** Review maintainability, structure, performance, optimization, and rushed decisions.
-   3. **Completion:** Verify requirements, final changes, and cleanup.
+
+## Coding: Localization
+
+- If a project has localizations, always add everything new you add to all available localized language files.
+- If you update one localization with new or changed information, also update all other languages if there are any.
+- If you work on a new project and the user tells you to localize it, always add all these languages: English US (as default/fallback), German, Japanese, Korean, Simplified Chinese, Polish, Russian, Ukrainian, Spanish (Spain), Spanish (Mexico), Brazilian Portuguese. 
 
 ## Special Terms
 
