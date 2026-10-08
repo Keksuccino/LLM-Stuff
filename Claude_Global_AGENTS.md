@@ -81,6 +81,18 @@
 - Never nest classes/interfaces inside Mixin classes or place non-Mixin classes/interfaces in declared Mixin packages.
 - Verify names, types, and method signatures for every method/field referenced or targeted in Mixins.
 
+## Java Minecraft Mod Coding: In-Game Feature Testing
+
+- Whenever you add or change world features (blocks, plants, trees, worldgen, structures, entities, interactions, models, textures, HUD), test them in the running game on both loaders. Unit tests and compiling are not enough.
+- Write a temporary harness hooked into the client/server tick. It opens a dev world, sets up test platforms far from spawn, runs scripted steps and closes the game. Log every check as `[CHECK] name: PASS/FAIL details` with real measurements.
+- Trigger features through real game paths: real random ticks, tree growers, item use, entities acting on their own. Every mixin needs an in-game check.
+- Check worldgen and structure changes only in freshly generated chunks, in a different far-away region per run, and verify the result piece by piece.
+- Simulate player input through real key mappings, never Computer Use.
+- Screenshot every visual feature from several angles, by day and by night. Look at the shots critically and iterate until it looks right.
+- When something misbehaves, log the relevant state and find the root cause. Turn found bugs into JUnit tests where possible.
+- For multiplayer-relevant features, also test on each loader's dedicated server with a real client connected. You may set `eula=true` in the dev server's `eula.txt`, plus `online-mode=false` and `white-list=false` in its `server.properties`, to do so.
+- Afterwards, remove all harness code, hooks, screenshots and test worlds you created. Report each check's result and what stays unverified.
+
 ## Purchases & Subscriptions
 
 - Never spend money, make purchases, or subscribe to paid services, even when explicitly requested by the user.
