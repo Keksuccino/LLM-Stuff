@@ -1,8 +1,7 @@
 ## General Guidelines
 
 - In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
-- Resolve routine choices autonomously within scope. If missing information materially blocks correctness, scope, or authorization, finish independent work before asking. Ask only in the final message ending the turn; never use ask-question tools.
-- Use the imagegen tool only when the user explicitly requests it by mentioning "imagegen".
+- Avoid running `rm` commands. Move files to the trash instead.
 
 ## Environment
 
@@ -10,17 +9,13 @@
 - Storage: 500 GB system SSD; connected 1 TB external SSD as main data storage.
 - Connected monitors: 31.5" 3840×2160, 31.5" 2560×1440, 23.5" 1920×1080.
 
-## Wording Guidelines
-
-- Never say "smoke-testing", "buddy", or "You're right".
-- Never say it was right to "push back" or "call that out".
-
 ## Coding Guidelines
 
 - Reuse/share code wherever possible through shared methods, fields, etc.; avoid near-duplicate implementations.
 - Keep projects organized and easy for new developers to understand and maintain. Avoid god classes; split large classes by responsibility without creating unnecessary tiny helpers.
 - Document fragile or seemingly hacky, strange, or useless code: its behavior, purpose, important constraints, and how to avoid breaking it. Add other comments only when useful.
 - Never change a project's version without the user telling you to do so.
+- Never put information about code changes in any documentation or code comments. Documentation and comments should reflect the current state of the project, not talk about how something worked in the past, or how it got changed.
 
 ## Testing
 
@@ -35,29 +30,21 @@
 - Do not create report, plan, or audit files instead of directly reporting in chat. Only do that if the user tells you to.
 - Run relevant checks and report anything that remains unverified.
 - Report noticed out-of-scope issues needing fixes in your final answer.
-- Before finishing, TRIPLE-CHECK through three reviews:
-   1. **Correctness:** Trace the entire execution chain step by step—what happens, where, and with what side effects. Check edge cases, bugs, and incomplete implementations.
-   2. **Quality:** Review maintainability, structure, performance, optimization, and rushed decisions.
-   3. **Completion:** Verify requirements, final changes, and cleanup.
 
-## Image Inspection
+## Coding: Localization
 
-- Inspect the whole image for anything odd, misplaced, or wrong. Queue additional task-related issues and fix them immediately after the current item.
-- Do not fix unrelated image issues without user approval.
+- If a project is localized, never use hardcoded text, always localize all new things you add to all available language files.
+- If you add a new localization, or edit an existing one, also sync all these changes to all available other localization files.
+- If you work on a new project and the user tells you to localize it, always add all these languages: English US (as default/fallback), German, Japanese, Korean, Simplified Chinese, Polish, Russian, Ukrainian, Spanish (Spain), Spanish (Mexico), Brazilian Portuguese, Turkish, Greek, French.
 
 ## Special Terms
 
 - In AI/LLM-agent discussions, a "turn" is the full cycle from the user's message through tool calls and reasoning to the assistant's final answer.
 
-## Subagents
-
-- Spawn all subagents with GPT-6.1-Sol, "xhigh" reasoning, and a clean context. Disable inherited context/chat history in spawn settings; merely instructing an agent to have no context is insufficient.
-- Provide each subagent with its objective, allowed paths, applicable instructions, relevant findings, acceptance criteria, and any other necessary information; it has none of your context or memories.
-- The parent agent remains responsible for integration and final verification.
-
 ## Git
 
 - Never create branches or switch the active branch without explicit user instruction.
+- Never add yourself as co-author to commits!
 
 ## GitHub
 
@@ -96,10 +83,17 @@
 - Never nest classes/interfaces inside Mixin classes or place non-Mixin classes/interfaces in declared Mixin packages.
 - Verify names, types, and method signatures for every method/field referenced or targeted in Mixins.
 
-## Project Scope & Boundaries
+## Java Minecraft Mod Coding: In-Game Feature Testing
 
-- Work only in project directories explicitly named in the task or primary project instructions, including their declared subprojects/subworkspaces; these need no additional confirmation.
-- Other local projects require an explicit user request with their directory paths. A project name alone does not authorize work outside the existing scope.
+- Whenever you add or change world features (blocks, plants, trees, worldgen, structures, entities, interactions, models, textures, HUD), test them in the running game on both loaders. Unit tests and compiling are not enough.
+- Write a temporary harness hooked into the client/server tick. It opens a dev world, sets up test platforms far from spawn, runs scripted steps and closes the game. Log every check as `[CHECK] name: PASS/FAIL details` with real measurements.
+- Trigger features through real game paths: real random ticks, tree growers, item use, entities acting on their own. Every mixin needs an in-game check.
+- Check worldgen and structure changes only in freshly generated chunks, in a different far-away region per run, and verify the result piece by piece.
+- Simulate player input through real key mappings, never Computer Use.
+- Screenshot every visual feature from several angles, by day and by night. Look at the shots critically and iterate until it looks right.
+- When something misbehaves, log the relevant state and find the root cause. Turn found bugs into JUnit tests where possible.
+- For multiplayer-relevant features, also test on each loader's dedicated server with a real client connected. You may set `eula=true` in the dev server's `eula.txt`, plus `online-mode=false` and `white-list=false` in its `server.properties`, to do so.
+- Afterwards, remove all harness code, hooks, screenshots and test worlds you created. Report each check's result and what stays unverified.
 
 ## Purchases & Subscriptions
 
