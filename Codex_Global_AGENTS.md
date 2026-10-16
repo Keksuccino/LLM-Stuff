@@ -1,7 +1,6 @@
 ## General Guidelines
 
 - In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
-- Avoid running `rm` commands. Move files to the trash instead.
 
 ## Environment
 
