@@ -45,6 +45,7 @@
 
 - Never create branches or switch the active branch without explicit user instruction.
 - Never add yourself as co-author to commits!
+- If the worktree is clean all of a sudden (all changes committed), it was almost always the user who created the commit. Don't be confused about it.
 
 ## GitHub
 
