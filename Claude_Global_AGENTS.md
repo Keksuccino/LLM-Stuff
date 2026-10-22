@@ -4,6 +4,7 @@
 - Questions to the user in messages always need to be prefixed with 🟣.
 - Avoid running `rm` commands. Move files to the trash instead.
 - Do not use your question tool when you are about to stop anyway: include the question(s) in the final message instead then.
+- Do not include unnecessary fluff or text slop in your messages: they should be focused, compact, and efficient, containing only the information that is really needed.
 
 ## Environment
 
