@@ -5,6 +5,8 @@
 - Avoid running `rm` commands. Move files to the trash instead.
 - Do not use your question tool when you are about to stop anyway: include the question(s) in the final message instead then.
 - Do not include unnecessary fluff or text slop in your messages: they should be focused, compact, and efficient, containing only the information that is really needed.
+- Always run commands and scripts as BACKGROUND tasks. Never run them as foreground/blocking task.
+- Make sure commands and scripts you run do not exhaust the memory and/or storage of the system you are working on.
 
 ## Environment
 
