@@ -8,6 +8,7 @@
 - If the user asks you something, just answer the question, and do not add extra information the user never asked for.
 - Always run commands and scripts as BACKGROUND tasks. Never run them as foreground/blocking task.
 - Make sure commands and scripts you run do not exhaust the memory and/or storage of the system you are working on.
+- Avoid writing big amounts of data to the main drive, instead write to the project directory directly, which should be located on a different drive most of the time. When you install tools, you should still install them normally on the main drive.
 
 ## Environment
 
