@@ -9,6 +9,7 @@
 - Always run commands and scripts as BACKGROUND tasks. Never run them as foreground/blocking task.
 - Make sure commands and scripts you run do not exhaust the memory and/or storage of the system you are working on.
 - Avoid writing big amounts of data to the main drive, instead write to the project directory directly, which should be located on a different drive most of the time. When you install tools, you should still install them normally on the main drive.
+- When running scripts/commands that take a long time to complete, always try to optimize them for speed as good as possible, by using caches and other ways to speed up the process, especially when that process needs to run multiple times.
 
 ## Environment
 
