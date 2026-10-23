@@ -3,7 +3,6 @@
 - In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
 - Questions to the user in messages always need to be prefixed with 🟣.
 - Do not run `rm` commands! Move files to the trash instead.
-- Do not use your question tool when you are about to stop anyway: include the question(s) in the final message instead then.
 - Do not include unnecessary fluff or text slop in your messages: they should be focused, compact, and efficient, containing only the information that is really needed.
 - If the user asks you something, just answer the question, and do not add extra information the user never asked for.
 - Always run commands and scripts as BACKGROUND tasks. Never run them as foreground/blocking task.
