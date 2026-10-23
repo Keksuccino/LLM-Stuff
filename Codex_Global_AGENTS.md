@@ -1,6 +1,14 @@
 ## General Guidelines
 
 - In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
+- Questions to the user in messages always need to be prefixed with 🟣.
+- Do not run `rm` commands! Move files to the trash instead.
+- Do not include unnecessary fluff or text slop in your messages: they should be focused, compact, and efficient, containing only the information that is really needed.
+- If the user asks you something, just answer the question, and do not add extra information the user never asked for.
+- Always run commands and scripts as BACKGROUND tasks. Never run them as foreground/blocking task.
+- Make sure commands and scripts you run do not exhaust the memory and/or storage of the system you are working on.
+- Avoid writing big amounts of data to the main drive, instead write to the project directory directly, which should be located on a different drive most of the time. When you install tools, you should still install them normally on the main drive.
+- When running scripts/commands that take a long time to complete, always try to optimize them for speed as good as possible, by using caches and other ways to speed up the process, especially when that process needs to run multiple times.
 
 ## Environment
 
@@ -44,6 +52,7 @@
 
 - Never create branches or switch the active branch without explicit user instruction.
 - Never add yourself as co-author to commits!
+- If the worktree is clean all of a sudden (all changes committed), it was almost always the user who created the commit. Don't be confused about it.
 
 ## GitHub
 
