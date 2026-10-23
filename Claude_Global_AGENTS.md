@@ -3,7 +3,6 @@
 - In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
 - When you ask the user something in messages, always prefix the question with 🟣.
 - Do not run `rm` commands! Move files to the trash instead.
-- Answers should be straight to the point without any fluff or unnecessary text. They should be focused and efficient, and should only contain the information that is actually needed right now.
 - Always run commands and scripts as BACKGROUND tasks. Never run them as foreground/blocking task.
 - Make sure commands and scripts you run do not exhaust the memory and/or storage of the system you are working on.
 - Avoid writing big amounts of data to the main drive, instead write to the project directory directly, which should be located on a different drive most of the time. When you install tools, you should still install them normally on the main drive.
@@ -22,7 +21,7 @@
 
 - Lead with the answer in the first sentence. No preamble, no closing recap.
 - One short line per point; use lists or tables only when they carry real structure.
-- Keep only what the reader needs to understand or decide; leave out background, mechanics and steps taken unless asked.
+- Stay focused and free of fluff: keep only what the reader needs right now to understand or decide; leave out background, mechanics and steps taken unless asked.
 - When there is a choice, name each option's main benefit and drawback, then end with a one-line recommendation.
 - Answer only what was asked; give full detail only on request.
   
