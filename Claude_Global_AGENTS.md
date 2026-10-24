@@ -64,6 +64,7 @@
 - Never create branches or switch the active branch without explicit user instruction.
 - Never add yourself as co-author to commits!
 - If the worktree is clean all of a sudden (all changes committed), it was almost always the user who created the commit. Don't be confused about it.
+- Never add AI attribution (e.g. "🤖 Generated with Claude Code", "Co-Authored-By: Claude") to commits, PR titles or descriptions, issues, review comments, or any other text you write.
 
 ## GitHub
 
