@@ -34,6 +34,7 @@
 - Document fragile or seemingly hacky, strange, or useless code: its behavior, purpose, important constraints, and how to avoid breaking it. Add other comments only when useful.
 - Never change a project's version without the user telling you to do so.
 - Never put information about code changes in any documentation or code comments. Documentation and comments should reflect the current state of the project, not talk about how something worked in the past, or how it got changed.
+- When working on UI, make sure all UI flows are smooth and not glitchy or stuttery: flows and transitions should look clean and smooth.
 
 ## Testing
 
