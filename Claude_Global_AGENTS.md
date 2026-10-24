@@ -1,5 +1,7 @@
 ## General Guidelines
 
+- Never be lazy!
+- Always work with maximum efficiency, never waste time!
 - In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
 - When you ask the user something in messages, always prefix the question with 🟣.
 - Do not run `rm` commands! Move files to the trash instead.
