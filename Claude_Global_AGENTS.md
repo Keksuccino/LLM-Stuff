@@ -59,6 +59,7 @@
 - If you work on a new project and the user tells you to localize it, always add all these languages: English US (as default/fallback), German, Japanese, Korean, Simplified Chinese, Polish, Russian, Ukrainian, Spanish (Spain), Spanish (Mexico), Brazilian Portuguese, Turkish, Greek, French.
 - Localization in any language (including English) should always sound natural, and be written in a chill and friendly tone (like talking to a friend).
 - If the language has a chill/informal tone (like "Du" in German for example), use that informal tone, but stay friendly.
+- Do not translate things too directly/literally, instead translate them in a way that sounds natural in the target language, even if it is not a literal translation.
 
 ## Special Terms
 
