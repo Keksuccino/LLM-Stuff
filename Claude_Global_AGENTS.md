@@ -42,6 +42,9 @@
 
 - Test the actual production implementation; never create helper classes solely to share code between tests and production.
 - Never test hardcoded human-readable plain text (status text, messages, etc.); wording changes must never break tests.
+- When you test UI changes, launch the actual application or add testing code that renders the part of the UI you changed, so you can take screenshots and actually see what you did.
+- When launching applications or other things that would render on screen and/or could catch window focus, always try to render/launch these off-screen, and avoid letting them catch window focus (change the focused window). Only if there is no other way, you can let them catch focus and/or render them on-screen.
+- Special testing code for launching apps in a special off-screen/not-catch-focus way can be kept in the application and should get documented in a file named TESTING_GUIDELINES.md in the project's root directory. Before adding new testing code for that, check if there is already a file like that documenting a harness like that.
 
 ## Workflow Guidelines
 
@@ -52,7 +55,7 @@
 - Run relevant checks and report anything that remains unverified.
 - Report noticed out-of-scope issues needing fixes in your final answer.
 
-## Coding: Localization
+## Localization
 
 - If a project is localized, never use hardcoded text, always localize all new things you add to all available language files.
 - If you add a new localization, or edit an existing one, also sync all these changes to all available other localization files.
@@ -60,23 +63,6 @@
 - Localization in any language (including English) should always sound natural, and be written in a chill and friendly tone (like talking to a friend).
 - If the language has a chill/informal tone (like "Du" in German for example), use that informal tone, but stay friendly.
 - Do not translate things too directly/literally, instead translate them in a way that sounds natural in the target language, even if it is not a literal translation.
-
-## Special Terms
-
-- In AI/LLM-agent discussions, a "turn" is the full cycle from the user's message through tool calls and reasoning to the assistant's final answer.
-
-## Git
-
-- Never create branches or switch the active branch without explicit user instruction.
-- Never add yourself as co-author to commits!
-- If the worktree is clean all of a sudden (all changes committed), it was almost always the user who created the commit. Don't be confused about it.
-- Never add AI attribution (e.g. "🤖 Generated with Claude Code", "Co-Authored-By: Claude") to commits, PR titles or descriptions, issues, review comments, or any other text you write.
-- Never ask on your own if you should commit or push changes. The user will tell you when you should commit/push.
-- When you commit something related to a GitHub issue, add "Fixes #000" or "Implements #000" as footer of the commit message, with the "000" being the actual issue number, and "Fixes" used for fixed bugs/problem, and "Implements" used for feature implementations or anything that is not a bug/problem.
-
-## GitHub
-
-- Read GitHub issues' current state and all comments through live tools such as GitHub CLI. Never use normal web fetch/search tools, which return cached content.
 
 ## Swift Coding
 
@@ -123,6 +109,23 @@
 - For multiplayer-relevant features, also test on each loader's dedicated server with a real client connected. You may set `eula=true` in the dev server's `eula.txt`, plus `online-mode=false` and `white-list=false` in its `server.properties`, to do so.
 - Afterwards, remove all harness code, hooks, screenshots and test worlds you created. Report each check's result and what stays unverified.
 
+## Special Terms
+
+- In AI/LLM-agent discussions, a "turn" is the full cycle from the user's message through tool calls and reasoning to the assistant's final answer.
+
+## Git
+
+- Never create branches or switch the active branch without explicit user instruction.
+- Never add yourself as co-author to commits!
+- If the worktree is clean all of a sudden (all changes committed), it was almost always the user who created the commit. Don't be confused about it.
+- Never add AI attribution (e.g. "🤖 Generated with Claude Code", "Co-Authored-By: Claude") to commits, PR titles or descriptions, issues, review comments, or any other text you write.
+- Never ask on your own if you should commit or push changes. The user will tell you when you should commit/push.
+- When you commit something related to a GitHub issue, add "Fixes #000" or "Implements #000" as footer of the commit message, with the "000" being the actual issue number, and "Fixes" used for fixed bugs/problem, and "Implements" used for feature implementations or anything that is not a bug/problem.
+
+## GitHub
+
+- Read GitHub issues' current state and all comments through live tools such as GitHub CLI. Never use normal web fetch/search tools, which return cached content.
+  
 ## Purchases & Subscriptions
 
 - Never spend money, make purchases, or subscribe to paid services, even when explicitly requested by the user.
