@@ -36,6 +36,7 @@
 - Never put information about code changes in any documentation or code comments. Documentation and comments should reflect the current state of the project, not talk about how something worked in the past, or how it got changed.
 - When working on UI, make sure all UI flows look smooth and not glitchy or stuttery: flows and transitions should look clean and smooth.
 - Always set performance optimization as your highest priority! Code should be written with performance in mind, aiming for the best possible memory, CPU, GPU, and storage space optimization.
+- UI should always be very responsive, it should never wait for animations or similar (like automatic scrolling) to finish before allowing the next action or animation to start. If an animation would block the next action, it should get cancelled, and the next action should start right away.
 
 ## Testing
 
