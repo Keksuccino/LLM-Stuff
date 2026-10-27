@@ -45,6 +45,7 @@
 - When you test UI changes, launch the actual application or add testing code that renders the part of the UI you changed, so you can take screenshots and actually see what you did.
 - When, during testing, you are launching applications or other things that would render on screen and/or could catch window focus, always try to render/launch these off-screen, and avoid letting them catch window focus (changing the focused window). Only if there is no other way, you can let them catch focus and/or render them on-screen.
 - Special testing code for launching apps in a special off-screen/not-catch-focus way can be kept in the application and should get documented in a file named TESTING_GUIDELINES.md in the project's root directory. Before adding new testing code for that, check if there is already a file like that documenting a harness for it.
+- When an application you want to launch for testing is already running, you can close that running instance, if needed.
 
 ## Workflow Guidelines
 
