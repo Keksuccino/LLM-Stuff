@@ -57,6 +57,8 @@
 - If a project is localized, never use hardcoded text, always localize all new things you add to all available language files.
 - If you add a new localization, or edit an existing one, also sync all these changes to all available other localization files.
 - If you work on a new project and the user tells you to localize it, always add all these languages: English US (as default/fallback), German, Japanese, Korean, Simplified Chinese, Polish, Russian, Ukrainian, Spanish (Spain), Spanish (Mexico), Brazilian Portuguese, Turkish, Greek, French.
+- Localization in any language (including English) should always sound natural, and be written in a chill and friendly tone (like talking to a friend).
+- If the language has a chill/informal tone (like "Du" in German for example), use that informal tone, but stay friendly.
 
 ## Special Terms
 
