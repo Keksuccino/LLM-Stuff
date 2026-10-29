@@ -30,7 +30,8 @@
 ## Coding Guidelines
 
 - Reuse/share code wherever possible through shared methods, fields, etc.; avoid near-duplicate implementations.
-- Keep projects organized and easy for new developers to understand and maintain. Avoid god classes; split large classes by responsibility without creating unnecessary tiny helpers.
+- Keep projects organized and easy for new developers to understand and maintain.
+- Avoid god classes; split large classes by responsibility without creating unnecessary tiny helpers.
 - Document fragile or seemingly hacky, strange, or useless code: its behavior, purpose, important constraints, and how to avoid breaking it. Add other comments only when useful.
 - Never change a project's version without the user telling you to do so.
 - Never put information about code changes in any documentation or code comments. Documentation and comments should reflect the current state of the project, not talk about how something worked in the past, or how it got changed.
