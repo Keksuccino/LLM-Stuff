@@ -5,8 +5,12 @@
 ## General
 
 - These guidelines use `modname`, `ModName`, and `MODNAME` as placeholders for the actual mod name of the current mod you work on.
+- Most mod projects you work on use the MultiLoader layout with shared logic under `common` and loader-specific wrappers under `fabric`, and `forge`/`neoforge` depending on the Minecraft version.
+- Most mod projects you work on have an unconventional handling of the `version` variable in Gradle, which in most cases is always `1.0.0`, which is intentional and should NEVER be changed.
+- The actual mod version is defined in `mod_version` in `gradle.properties`, and in the mod's main class in the `VERSION` constant.
+- It is intentional that some stuff in the project uses the normal `version` variable.
+- When told to change a mod version, do so in both `gradle.properties` and the main class `VERSION` constant.
 - Name resources with the mod's name as prefix (e.g., `modname.mixins.json`, `modname.accesswidener`).
-- When told to change a mod version, do so in both `gradle.properties` and the main mod class's `VERSION` constant.
 - Never add upper bounds to supported Minecraft versions. Use minimum-version-only constraints in all loader metadata and build configuration, unless explicitly instructed otherwise.
 - Mods always need to be fully compatible with Sodium and Iris. Make sure you test with Sodium and Iris installed, at least in one loader.
 - To check Sodium/Iris compatibility, check if they touch the same parts of Vanilla code as you, and if so, make sure our mod does not conflict with the other mods in these parts.
