@@ -67,6 +67,7 @@
 - Japanese and Korean are an exception for the informal tone: here you should use a “friendly polite” (です/ます, 해요체) tone instead.
 - When you start building a completely new project, always localize it from the start, with the default languages mentioned above.
 - Do not translate things too directly/literally, instead translate them in a way that sounds natural in the target language, even if it is not a literal translation.
+- Never use translation APIs for localization unless the user tells you to use one. Manually translate text instead.
 
 ## Swift Coding
 
