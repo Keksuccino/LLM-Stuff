@@ -47,6 +47,8 @@
 - When, during testing, you are launching applications or other things that would render on screen and/or could catch window focus, always try to render/launch these off-screen, and avoid letting them catch window focus (changing the focused window). Only if there is no other way, you can let them catch focus and/or render them on-screen.
 - Special testing code for launching apps in a special off-screen/not-catch-focus way can be kept in the application and should get documented in a file named TESTING_GUIDELINES.md in the project's root directory. Before adding new testing code for that, check if there is already a file like that documenting a harness for it.
 - Improve the offscreen testing harness whenever you miss a feature in there, instead of ditching it.
+- If there is no offscreen testing harness yet, it automatically becomes your job to add one. If you work with multiple agents in parallel, coordinate each other for which agent adds the harness.
+- The offscreen harness should allow you to do everything that is needed for testing, including simulated inputs of any type you need (key presses, touch taps, etc.).
 - When an application you want to launch for testing is already running, you can close that running instance, if needed.
 
 ## Workflow Guidelines
