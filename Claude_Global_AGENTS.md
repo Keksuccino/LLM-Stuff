@@ -75,6 +75,7 @@
 - Xcode: `/Applications/Xcode-beta.app`. CLI use is allowed; launch the GUI only when instructed by the user.
 - Since macOS 27, simulators use Device Hub; there is no standalone Simulator.
 - Device Hub is a separate app with its own interface. Control it directly with Computer Use, never through Xcode.
+- Instead of using your built-in iOS simulator tool, always prefer existing background/offscreen testing harnesses.
 
 ## Java Coding
 
