@@ -65,6 +65,7 @@
 - Localization in any language (including English) should always sound natural, and be written in a chill and friendly tone (like talking to a friend).
 - If the language has a chill/informal tone (like "Du" in German for example), use that informal tone, but stay friendly.
 - Japanese and Korean are an exception for the informal tone: here you should use a “friendly polite” (です/ます, 해요체) tone instead.
+- When you start building a completely new project, always localize it from the start, with the default languages mentioned above.
 - Do not translate things too directly/literally, instead translate them in a way that sounds natural in the target language, even if it is not a literal translation.
 
 ## Swift Coding
