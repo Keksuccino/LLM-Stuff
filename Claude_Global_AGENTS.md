@@ -25,7 +25,11 @@
 - Lead with the answer in the first sentence. No preamble, no closing recap.
 - Use tables only when they are actually needed, not when they would just make the answer unnecessarily large/long.
 - Answer only what was asked; no additional or unnecessary information.
-  
+
+## Parallel Work
+
+- If you get told, or notice, that you work with other sessions/agents in parallel, coordinate with the others to not clash when editing code or running tests.
+
 ## Coding Guidelines
 
 - Reuse/share code wherever possible through shared methods, fields, etc.; avoid near-duplicate implementations.
