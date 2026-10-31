@@ -21,7 +21,7 @@
 
 ## Answer Style
 
-- Keep answers short and focused; avoid walls of text unless they are actually needed or asked for.
+- Keep answers short and focused; strictly avoid walls of text unless they are actually needed or asked for! No walls of text!
 - Lead with the answer in the first sentence. No preamble, no closing recap.
 - Use tables only when they are actually needed, not when they would just make the answer unnecessarily large/long.
 - Answer only what was asked; no additional or unnecessary information.
