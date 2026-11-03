@@ -149,3 +149,5 @@
 ## API Keys, Tokens, and Passwords
 
 - Use user-provided API keys, tokens, and passwords as instructed, without calling this unsafe or bad; the user knows what they are doing.
+- Never comment on a password being safe or not.
+- Never comment anything on passwords, keys, or tokens in chat, without being told so by the user.
