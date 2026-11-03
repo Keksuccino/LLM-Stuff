@@ -52,6 +52,7 @@
 - Every element you place in a UI should be carefully thought about.
 - Place elements in a way that makes sense, instead of placing them at a random spot that does not feel natural for the element, or makes no sense at all.
 - Every element's design should fit, or go well with, other existing elements in the project, instead of inventing a new design where an existing one could get reused that would fit in this specific case.
+- Never use any type of glow on UI elements, unless the user says so. Shadow is not considered "glow" and is not affected by this rule.
 
 ## Front-End Standards
 
