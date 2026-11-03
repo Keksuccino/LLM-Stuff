@@ -43,6 +43,39 @@
 - UI should always be very responsive, it should never wait for animations or similar (like automatic scrolling) to finish before allowing the next action or animation to start. If an animation would block the next action, it should get cancelled, and the next action should start right away.
 - When you create scrollable views (feeds for example), always make sure that scrolling is smooth, without hiccups or jumps, especially when scroll views add more content while scrolling down. They should always stays smooth and never glitch back or forth, not lag, or anything else.
 
+## UI Design
+
+- Always aim for high-quality UI designs that feel unique and hand-crafted, instead of making generic/sloppy ones.
+- Never cheap out on UI designs, and never rush them!
+- Always double-check if you placed UI elements and features at places they feel unnatural at, or straight um make no sense at all, and fix/rework any cases you find.
+- Every element you place in a UI should be carefully thought about.
+- Place elements in a way that makes sense, instead of placing them at a random spot that does not feel natural for the element, or makes no sense at all.
+- Every element's design should fit, or go well with, other existing elements in the project, instead of inventing a new design where an existing one could get reused that would fit in this specific case.
+
+## Front-End Standards
+
+- Everything the user sees should always have the highest quality and design standards!
+- The design standards are always beautifully crafted visuals that feel hand-crafted and unique, made with heart and love.
+
+## Pixel Art Assets
+
+- You make all your pixel art assets yourself.
+- When a project needs pixel art assets, always make some.
+- Always make all your pixel art assets with the highest quality standards! They should look high-quality and hand-made, beautifully crafted with heart and soul. They should always feel unique and like one of their kind, never cheap, rushed, or sloppy!
+- Double-check all your assets for potential pixel errors or weird-looking parts, and fix all of them.
+
+## Animated Assets
+
+- When animating assets, always make animations with the highest quality standards.
+- Animations should feel smooth, high-quality, and natural. They should feel alive.
+
+## Audio Assets
+
+- Synthesize all audio assets yourself.
+- When making sound assets, always download audio references first that fit the sound you make, for a better final result.
+- Never rush audio assets! Aim for a high-quality and natural-sounding asset.
+- When making UI sound assets, always aim for satisfying sounds.
+
 ## Testing
 
 - Test the actual production implementation; never create helper classes solely to share code between tests and production.
