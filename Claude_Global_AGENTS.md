@@ -42,7 +42,7 @@
 
 ## UI Design
 
-- Always aim for lots of QoL features and user-friendlines.
+- Always aim for lots of QoL features and user-friendliness.
 - Always aim for high-quality UI designs that feel unique and hand-crafted, instead of making generic/sloppy ones.
 - Never cheap out on UI designs, and never rush them!
 - Always double-check if you placed UI elements and features at places they feel unnatural at, or straight um make no sense at all, and fix/rework any cases you find.
