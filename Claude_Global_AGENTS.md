@@ -34,14 +34,11 @@
 
 - Reuse/share code wherever possible through shared methods, fields, etc.; avoid near-duplicate implementations.
 - Keep projects organized and easy for new developers to understand and maintain.
-- Avoid god classes; split large classes by responsibility without creating unnecessary tiny helpers.
+- Strictly void god classes; split large classes by responsibility without creating unnecessary tiny helpers!
 - Document fragile or seemingly hacky, strange, or useless code: its behavior, purpose, important constraints, and how to avoid breaking it. Add other comments only when useful.
 - Never change a project's version without the user telling you to do so.
 - Never put information about code changes in any documentation or code comments. Documentation and comments should reflect the current state of the project, not talk about how something worked in the past, or how it got changed.
-- When working on UI, make sure all UI flows look smooth and not glitchy or stuttery: flows and transitions should look clean and smooth.
 - Always set performance optimization as your highest priority! Code should be written with performance in mind, aiming for the best possible memory, CPU, GPU, and storage space optimization.
-- UI should always be very responsive, it should never wait for animations or similar (like automatic scrolling) to finish before allowing the next action or animation to start. If an animation would block the next action, it should get cancelled, and the next action should start right away.
-- When you create scrollable views (feeds for example), always make sure that scrolling is smooth, without hiccups or jumps, especially when scroll views add more content while scrolling down. They should always stays smooth and never glitch back or forth, not lag, or anything else.
 
 ## UI Design
 
@@ -53,18 +50,22 @@
 - Place elements in a way that makes sense, instead of placing them at a random spot that does not feel natural for the element, or makes no sense at all.
 - Every element's design should fit, or go well with, other existing elements in the project, instead of inventing a new design where an existing one could get reused that would fit in this specific case.
 - Never use any type of glow on UI elements, unless the user says so. Shadow is not considered "glow" and is not affected by this rule.
+- UI should always be very responsive, it should never wait for animations or similar (like automatic scrolling) to finish before allowing the next action or animation to start. If an animation would block the next action, it should get cancelled, and the next action should start right away.
+- When you create scrollable views (feeds for example), always make sure that scrolling is smooth, without hiccups or jumps, especially when scroll views add more content while scrolling down. They should always stays smooth and never glitch back or forth, not lag, or anything else.
+- When working on UI, make sure all UI flows look smooth and not glitchy or stuttery: flows and transitions should look clean and smooth.
 
 ## Front-End Standards
 
-- Everything the user sees should always have the highest quality and design standards!
-- The design standards are always beautifully crafted visuals that feel hand-crafted and unique, made with heart and love.
+- Everything part of the front-end should always have the highest visual quality and design standards!
+- The design standards are: beautifully crafted UI and visuals that feel hand-crafted and unique, made with heart and soul, instead of producing rushed and cheap-looking slop.
 
 ## Pixel Art Assets
 
 - You make all your pixel art assets yourself.
-- When a project needs pixel art assets, always make some.
-- Always make all your pixel art assets with the highest quality standards! They should look high-quality and hand-made, beautifully crafted with heart and soul. They should always feel unique and like one of their kind, never cheap, rushed, or sloppy!
-- Double-check all your assets for potential pixel errors or weird-looking parts, and fix all of them.
+- When a project needs pixel art assets, always make them from the start instead of using placeholders or plain color fills.
+- Always make all your pixel art assets with the highest quality standards! They should look high-quality and hand-made, beautifully crafted with heart and soul.
+- Your pixel art always need to feel unique and professional, like one of their kind. Never cheap, rushed, or sloppy!
+- Double-check all your assets for potential pixel errors, weird-looking parts, bad/cheap-looking or rushed designs, and fix all of them.
 
 ## Animated Assets
 
