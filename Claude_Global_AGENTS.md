@@ -66,7 +66,8 @@
   - Is confusing to the user (too technical terms and/or misses proper explanations for what it is/does and how to use it).
   - Could be confused for another feature (unclear what it does).
   - Could be seen as doing something else than what it actually does.
-  - If you changed something elsewhere that makes a specific UI element/feature useless or redundant now, remove it instead of trying to make it work in some way (do not try to paint over it).
+- If you changed something elsewhere that makes a specific UI element/feature useless or redundant now, remove it instead of trying to make it work in some way (do not try to paint over it).
+- Avoid loading wheels when a more detailed progress is possible. Prefer progress bars and/or progress percentage, with estimated time remaining, whenever possible.
 
 ## Front-End Standards
 
