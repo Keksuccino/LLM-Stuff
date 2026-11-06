@@ -53,6 +53,20 @@
 - UI should always be very responsive, it should never wait for animations or similar (like automatic scrolling) to finish before allowing the next action or animation to start. If an animation would block the next action, it should get cancelled, and the next action should start right away.
 - When you create scrollable views (feeds for example), always make sure that scrolling is smooth, without hiccups or jumps, especially when scroll views add more content while scrolling down. They should always stays smooth and never glitch back or forth, not lag, or anything else.
 - When working on UI, make sure all UI flows look smooth and not glitchy or stuttery: flows and transitions should look clean and smooth.
+- Properly think about every element/feature you place in a UI. Do a self-check if it makes sense to place it at that specific spot, and if the design of it integrates well into existing UI.
+- Avoid UI clutter. Do not add UI elements/features just for the sake of adding them. They should always have a clear purpose, never be redundant or unnecessary.
+- Examples of bad UI elements and features:
+  - Serves no real purpose.
+  - Is right next to an element that does the same.
+  - Displays information the user doesn’t need to know about (the user does not care about it, etc.).
+  - Takes more space than needed (wastes space).
+  - Is rushed/sloppy.
+  - Is not user-friendly.
+  - Does not follow the grid of the existing UI.
+  - Is confusing to the user (too technical terms and/or misses proper explanations for what it is/does and how to use it).
+  - Could be confused for another feature (unclear what it does).
+  - Could be seen as doing something else than what it actually does.
+  - If you changed something elsewhere that makes a specific UI element/feature useless or redundant now, remove it instead of trying to make it work in some way (do not try to paint over it).
 
 ## Front-End Standards
 
