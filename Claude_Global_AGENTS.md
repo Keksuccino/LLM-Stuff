@@ -43,6 +43,7 @@
 
 ## UI Design
 
+- For every change you apply to an UI, recall all UI guidelines and contemplate if the change was good or should be improved.
 - Always aim for lots of QoL features and user-friendliness.
 - Always aim for high-quality UI designs that feel unique and hand-crafted, instead of making generic/sloppy ones.
 - Never cheap out on UI designs, and never rush them!
