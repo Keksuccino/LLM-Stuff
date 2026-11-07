@@ -58,6 +58,7 @@
 - Examples of bad UI elements and features:
   - Serves no real purpose.
   - Is right next to an element that does the same.
+  - Displays the same information as another element in the same UI/view.
   - Displays information the user doesn’t need to know about (the user does not care about it, etc.).
   - Takes more space than needed (wastes space).
   - Is rushed/sloppy.
