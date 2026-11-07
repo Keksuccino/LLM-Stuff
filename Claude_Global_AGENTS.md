@@ -70,6 +70,7 @@
   - Could be seen as doing something else than what it actually does.
 - If you changed something elsewhere that makes a specific UI element/feature useless or redundant now, remove it instead of trying to make it work in some way (do not try to paint over it).
 - Avoid loading wheels when a more detailed progress is possible. Prefer progress bars and/or progress percentage, with estimated time remaining, whenever possible.
+- Make "hidden" UI features obvious, or hint at them. For example, adding a typical "drop files here" label/icon for when a UI accepts files dropped onto the view/screen/area.
 
 ## Front-End Standards
 
