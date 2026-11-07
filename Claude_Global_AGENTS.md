@@ -118,6 +118,7 @@
 - Do not create report, plan, or audit files instead of directly reporting in chat. Only do that if the user tells you to.
 - Run relevant checks and report anything that remains unverified.
 - Report noticed out-of-scope issues needing fixes in your final answer.
+- When bugs, or missing logic or features, are in your way of implementing something, fix/add them properly, instead of working around them.
 
 ## Localization
 
