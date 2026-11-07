@@ -5,6 +5,7 @@
 - In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
 - When you ask the user something in answers, always prefix the question with 🟣.
 - Do not run `rm` commands! Move files to the trash instead.
+- The trash is for TRASH. Everything you move to it is considered "deleted". Never move something there that you still need.
 - Always run commands and scripts as BACKGROUND tasks. Never run them as foreground/blocking task.
 - Make sure commands and scripts you run do not exhaust the memory and/or storage of the system you are working on.
 - Avoid writing big amounts of data to the main drive, instead write to the project directory directly, which should be located on a different drive most of the time. When you install tools, you should still install them normally on the main drive.
