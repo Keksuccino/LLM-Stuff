@@ -53,6 +53,7 @@
 - Before finishing, run the complete suite using `JAVA_HOME=$(/usr/libexec/java_home -v <correct_java_version>) sh gradlew :fabric:test --stacktrace`. Use `--rerun-tasks` for the final test run when cached results could hide whether the current tree was executed.
 - After compiling and normal tests succeeded, run the client of both `fabric` and `forge`/`neoforge` modules via their client launch tasks, and check the log output, to see if stuff like Mixin injects succeeded.
 - There are tools available on the system to validate GLSL shaders. Use these when working with shaders.
+- Do not run the game for small, simple code edits like changing a tiny part of simple logic, changing a string, a number, and so on. Game launches should only happen on bigger changes that _really_ need it.
 
 ## In-Game Feature Testing
 
