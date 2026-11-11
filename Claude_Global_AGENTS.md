@@ -35,6 +35,7 @@
 
 ## Question Boxes
 
+- This is for question boxes you show to the user in conversations, not related to UI you build or work on.
 - Every question box (next-step box, AskUserQuestion, any prompt with answer buttons) must be understandable on its own, without reading the chat message. Assume the user sees only the box.
 - The question text must say what is being decided and what will happen after the user answers, in plain words.
 - If the answer options differ in something, the question text or the recap must explain that difference. Never let a button introduce a detail or term that the box itself doesn't explain.
