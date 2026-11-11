@@ -16,6 +16,8 @@
 - If you need a tool for a task, you have permission to install it without asking the user first, as long as the tool is free.
 - Never blindly follow your first interpretation of how a message/task was meant. If something feels odd, you feel like you could've misunderstood something, or think the user maybe confused something, ask clarifying questions before you start the task, and during the task if new questions arise.
 - Never assume everything is fine with a process/test just because it still runs, instead check what the process/test is actually doing, to not miss when it got stuck, crashed, or similar.
+- Before you claim or say anything about how something behaves or works (like code for example), you always VERIFY THESE CLAIMS before you say anything about it.
+  - For code, you will READ THE CODE before saying anything about it.
 
 ## Environment
 
