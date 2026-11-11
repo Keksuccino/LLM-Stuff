@@ -33,6 +33,14 @@
 - Use tables only when they are actually needed, not when they would just make the answer unnecessarily large/long.
 - Answer only what was asked; no additional or unnecessary information.
 
+## Question Boxes
+
+- Every question box (next-step box, AskUserQuestion, any prompt with answer buttons) must be understandable on its own, without reading the chat message. Assume the user sees only the box.
+- The question text must say what is being decided and what will happen after the user answers, in plain words.
+- If the answer options differ in something, the question text or the recap must explain that difference. Never let a button introduce a detail or term that the box itself doesn't explain.
+- Each option must make clear what it does. Use "Yes" or "No" only when the question already says exactly what yes and no mean.
+- If the decision is too complex to explain inside the box, ask it in the chat message instead, as a normal question, and don't use a box.
+
 ## Parallel Work
 
 - If you get told, or notice, that you work with other sessions/agents in parallel, coordinate with the others to not clash when editing code or running tests.
