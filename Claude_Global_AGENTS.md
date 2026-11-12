@@ -85,6 +85,9 @@
 - If you changed something elsewhere that makes a specific UI element/feature useless or redundant now, remove it instead of trying to make it work in some way (do not try to paint over it).
 - Avoid loading wheels when a more detailed progress is possible. Prefer progress bars and/or progress percentage, with estimated time remaining, whenever possible.
 - Make "hidden" UI features obvious, or hint at them. For example, adding a typical "drop files here" label/icon for when a UI accepts files dropped onto the view/screen/area.
+- Prefer sliders over number steppers, whenever a hard-capped range is known, and the range is not too big for a slider.
+- When using number steppers, use step sizes that make sense. Avoid 1-step steps for values that often get set to big numbers.
+- Features should be reachable with as few clicks as possible. Avoid making the user click through multiple sub-menus or similar, when the feature could also be made available in an easier way.
 
 ## Front-End Standards
 
