@@ -68,7 +68,7 @@
 - UI should always be very responsive, it should never wait for animations or similar (like automatic scrolling) to finish before allowing the next action or animation to start. If an animation would block the next action, it should get cancelled, and the next action should start right away.
 - When you create scrollable views (feeds for example), always make sure that scrolling is smooth, without hiccups or jumps, especially when scroll views add more content while scrolling down. They should always stays smooth and never glitch back or forth, not lag, or anything else.
 - When working on UI, make sure all UI flows look smooth and not glitchy or stuttery: flows and transitions should look clean and smooth.
-- Properly think about every element/feature you place in a UI. Do a self-check if it makes sense to place it at that specific spot, and if the design of it integrates well into existing UI.
+- Properly think about every element/feature you place in a UI. Do a self-check for if it makes sense to place it at that specific spot, and for if the design of it integrates well into existing UI.
 - Avoid UI clutter. Do not add UI elements/features just for the sake of adding them. They should always have a clear purpose, never be redundant or unnecessary.
 - Examples of bad UI elements and features that should be AVOIDED:
   - Serves no real purpose.
