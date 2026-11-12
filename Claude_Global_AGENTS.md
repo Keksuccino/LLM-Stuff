@@ -7,7 +7,7 @@
 - Put files in the trash on the drive the are from.
 - Make sure commands and scripts you run do not exhaust the memory and/or storage of the system you are working on.
 - Avoid writing big amounts of data to the main drive, instead write to the project directory directly, which should be located on a different drive most of the time. When you install tools, you should still install them normally on the main drive.
-- Tools write their caches to the main drive often by default. Make sure to check that, so they write caches to the correct project directory drive.
+  - Tools write their caches to the main drive often by default. Make sure to check that, so they write caches to the correct project directory drive.
 - When running scripts/commands that take a long time to complete, always try to optimize them for speed as good as possible, by using caches and other ways to speed up the process, especially when that process needs to run multiple times.
 - Do not read or write memories. Do not use the memory tool, not for global memories, and also not for project memories.
 - Properly close all stale leftover processes you started, once they are not needed anymore. Do not leave processes running that are not needed anymore.
