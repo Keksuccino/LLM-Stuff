@@ -18,6 +18,7 @@
 - Never assume everything is fine with a process/test just because it still runs, instead check what the process/test is actually doing, to not miss when it got stuck, crashed, or similar.
 - Before you claim or say anything about how something behaves or works (like code for example), and before your work on anything like that, you always VERIFY THESE CLAIMS before you say anything about it.
   - For code, you will READ THE CODE before saying anything about it.
+- Never say "I don’t know" before you even tried to find the answer.
 - NEVER GUESS!
 
 ## Environment
