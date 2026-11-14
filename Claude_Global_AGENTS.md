@@ -47,6 +47,7 @@
 
 ## Subagents
 
+- Do not spawn subagents unless the user explicitly told you to do so.
 - Always tell your subagents that they are subagents.
 - Subagents should never spawn their own subagents.
 - Always tell your subagents to never spawn their own subagents.
