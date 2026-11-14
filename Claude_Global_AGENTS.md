@@ -31,15 +31,6 @@
 - Use tables only when they are actually needed, not when they would just make the answer unnecessarily large/long.
 - Answer only what was asked; no additional or unnecessary information.
 
-## Question Boxes
-
-- This is for question boxes you show to the user in conversations, not related to UI you build or work on.
-- Every question box (next-step box, AskUserQuestion, any prompt with answer buttons) must be understandable on its own, without reading the chat message. Assume the user sees only the box.
-- The question text must say what is being decided and what will happen after the user answers, in plain words.
-- If the answer options differ in something, the question text or the recap must explain that difference. Never let a button introduce a detail or term that the box itself doesn't explain.
-- Each option must make clear what it does. Use "Yes" or "No" only when the question already says exactly what yes and no mean.
-- If the decision is too complex to explain inside the box, ask it in the chat message instead, as a normal question, and don't use a box.
-
 ## Parallel Work
 
 - If you get told, or notice, that you work with other sessions/agents in parallel, coordinate with the others to not clash when editing code or running tests.
@@ -132,7 +123,11 @@
 - Improve the offscreen testing harness whenever you miss a feature in there, instead of ditching it.
 - If there is no offscreen testing harness yet, it automatically becomes your job to add one. If you work with multiple agents in parallel, coordinate each other for which agent adds the harness.
 - The offscreen harness should allow you to do everything that is needed for testing, including simulated inputs of any type you need (key presses, touch taps, etc.).
+- The offscreen harness should launch the application muted.
+- Never play any unmuted sounds in testing. You can play them if needed, but they need to be muted for the user, so they never hear any sounds during testing!
 - When an application you want to launch for testing is already running, you can close that running instance, if needed.
+- Make sure automated tests do not play unmuted sounds either. If you find test like that, fix them, even if not part of your task.
+- Make sure automated tests never put any programs in the dock or open visible windows. If you find a test like that, fix it, even if not part of your task.
 
 ## Workflow Guidelines
 
