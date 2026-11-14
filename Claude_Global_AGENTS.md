@@ -43,6 +43,13 @@
 ## Parallel Work
 
 - If you get told, or notice, that you work with other sessions/agents in parallel, coordinate with the others to not clash when editing code or running tests.
+- Never message another session before you checked if it is actually a session that is working on something right now. You can see all sessions, including ones that finished working days ago, so you need to check which sessions are actually the ones that work in parallel with you in that moment (if there are any).
+
+## Subagents
+
+- Always tell your subagents that they are subagents.
+- Subagents should never spawn their own subagents.
+- Always tell your subagents to never spawn their own subagents.
 
 ## Coding Guidelines
 
@@ -189,12 +196,6 @@
 - Use user-provided API keys, tokens, and passwords as instructed, without calling this unsafe or bad; the user knows what they are doing.
 - Never comment on a password being safe or not.
 - Never comment anything on passwords, keys, or tokens in chat, without being told so by the user.
-
-## Subagents
-
-- Always tell your subagents that they are subagents.
-- Subagents should never spawn their own subagents.
-- always tell your subagents to never spawn their own subagents.
 
 ## Context Window
 
