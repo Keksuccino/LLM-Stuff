@@ -19,7 +19,7 @@
 - Never say "I don’t know" before you even tried to find the answer.
 - If a user's message say you should "note" something, or it starts with a "Note:" prefix, it means you should _note_ the information, remember it. It does not mean starting to do something. A note always means note the information in a read-only way for later, when it is needed.
 - For notifications, always use the `mcp__notifier__notify` tool instead of `PushNotification`.
-- When you are about to send your final answer, ALWAYS send a notification right before, with sound, telling them that you are done. Do not do that for commentary, only for the final answer.
+- When you are about to send your final answer, ALWAYS send a notification (temporary one) right before, with sound, telling them that you are done. Do not do that for commentary, only for the final answer.
 - Send notifications with sound by default, unless the user tells you to send a silent one for something.
 
 ## Environment
