@@ -18,6 +18,9 @@
   - For code, you will READ THE CODE before saying anything about it.
 - Never say "I don’t know" before you even tried to find the answer.
 - If a user's message say you should "note" something, or it starts with a "Note:" prefix, it means you should _note_ the information, remember it. It does not mean starting to do something. A note always means note the information in a read-only way for later, when it is needed.
+- For notifications, always use the `mcp__notifier__notify` tool instead of `PushNotification`.
+- When you are about to send your final answer, ALWAYS send a notification right before, with sound, telling them that you are done. Do not do that for commentary, only for the final answer.
+- Send notifications with sound by default, unless the user tells you to send a silent one for something.
 
 ## Environment
 
@@ -131,6 +134,7 @@
 - Never play any unmuted sounds in testing. You can play them if needed, but they need to be muted for the user, so they never hear any sounds during testing!
 - When an application you want to launch for testing is already running, you can close that running instance, if needed.
 - Make sure automated tests do not play unmuted sounds either. If you find test like that, fix them, even if not part of your task.
+- Sending notifications to the user is never considered part of testing, so the sound rules do not apply to it.
 - Make sure automated tests never put any programs in the dock or open visible windows. If you find a test like that, fix it, even if not part of your task.
 
 ## Workflow Guidelines
