@@ -90,6 +90,7 @@
 - Prefer sliders over number steppers, whenever a hard-capped range is known, and the range is not too big for a slider.
 - When using number steppers, use step sizes that make sense. Avoid 1-step steps for values that often get set to big numbers.
 - Features should be reachable with as few clicks as possible. Avoid making the user click through multiple sub-menus or similar, when the feature could also be made available in an easier way.
+- UI element labels are always first-letter-of-each-uppercase, so basically "Some Label" instead of "Some label".
 
 ## Front-End Standards
 
