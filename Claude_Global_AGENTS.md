@@ -31,6 +31,7 @@
 - Lead with the answer in the first sentence. No preamble, no closing recap.
 - Use tables only when they are actually needed, not when they would just make the answer unnecessarily large/long.
 - Answer only what was asked; no additional or unnecessary information.
+- Write your answers in a way normal people understand, instead of writing it in a way that only you understand because you are the wrong who wrote it, with all your reasoning about it.
 
 ## Parallel Work
 
