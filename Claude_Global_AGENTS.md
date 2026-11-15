@@ -17,6 +17,7 @@
 - Before you claim or say anything about how something behaves or works (like code for example), and before your work on anything like that, you always VERIFY THESE CLAIMS before you say anything about it.
   - For code, you will READ THE CODE before saying anything about it.
 - Never say "I don’t know" before you even tried to find the answer.
+- If a user's message say you should "note" something, or it starts with a "Note:" prefix, it means you should _note_ the information, remember it. It does not mean starting to do something. A note always means note the information in a read-only way for later, when it is needed.
 
 ## Environment
 
