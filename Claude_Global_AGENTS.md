@@ -1,42 +1,45 @@
-## General Guidelines
-
-- In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
-- When you ask the user something in answers, want them to make a decision, or approve something, always prefix the question/part with 🟣.
-- Do not run `rm` commands! Move files to the trash instead.
-- The trash is for TRASH. Everything you move to it is considered "deleted". Never move something there that you still need.
-- Put files in the trash on the drive the are from.
-- Make sure commands and scripts you run do not exhaust the memory and/or storage of the system you are working on.
-- Avoid writing big amounts of data to the main drive, instead write to the project directory directly, which should be located on a different drive most of the time. When you install tools, you should still install them normally on the main drive.
-  - Tools write their caches to the main drive often by default. Make sure to check that, so they write caches to the correct project directory drive.
-- When running scripts/commands that take a long time to complete, always try to optimize them for speed as good as possible, by using caches and other ways to speed up the process, especially when that process needs to run multiple times.
-- Do not read or write memories. Do not use the memory tool, not for global memories, and also not for project memories.
-- Properly close all stale leftover processes you started, once they are not needed anymore. Do not leave processes running that are not needed anymore.
-- If you need a tool for a task, you have permission to install it without asking the user first, as long as the tool is free.
-- Never blindly follow your first interpretation of how a message/task was meant. If something feels odd, you feel like you could've misunderstood something, or think the user maybe confused something, ask clarifying questions before you start the task, and during the task if new questions arise.
-- Never assume everything is fine with a process/test just because it still runs, instead check what the process/test is actually doing, to not miss when it got stuck, crashed, or similar.
-- Before you claim or say anything about how something behaves or works (like code for example), and before your work on anything like that, you always VERIFY THESE CLAIMS before you say anything about it.
-  - For code, you will READ THE CODE before saying anything about it.
-- Never say "I don’t know" before you even tried to find the answer.
-- If a user's message say you should "note" something, or it starts with a "Note:" prefix, it means you should _note_ the information, remember it. It does not mean starting to do something. A note always means note the information in a read-only way for later, when it is needed.
-- For notifications, always use the `mcp__notifier__notify` tool instead of `PushNotification`.
-- When you are about to send your final answer, ALWAYS send a notification (temporary one) right before, with sound, telling them that you are done. Do not do that for commentary, only for the final answer.
-- Send notifications with sound by default, unless the user tells you to send a silent one for something.
-- When a project needs any kind of assets (image, video, audio, animation), make them yourself from the start, instead of using placeholders or simple color fills, or similar.
-
 ## Environment
 
 - System: macOS 27 ("Golden Gate"), Mac Mini M4, Apple M4 Pro chip, 24 GB RAM.
 - Storage: 500 GB system SSD; connected 1 TB external SSD as main data storage.
 - Connected monitors: 31.5" 3840×2160, 31.5" 2560×1440, 23.5" 1920×1080.
 
+## General Guidelines
+
+- In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
+- When you ask the user something in answers, want them to make a decision, or approve something, always prefix the question/part with 🟣.
+- Do not run `rm` commands! Move files to the trash instead.
+- The trash is for TRASH. Everything you move to it is considered "deleted". Never move something there that you still need.
+- Put files in the trash on the drive they are from.
+- Make sure commands and scripts you run do not exhaust the memory and/or storage of the system you are working on.
+- Avoid writing big amounts of data to the main drive, instead write to the project directory directly, which should be located on a different drive most of the time. When you install tools, you should still install them normally on the main drive.
+  - Tools write their caches to the main drive often by default. Make sure to check that, so they write caches to the correct project directory drive.
+- When running scripts/commands that take a long time to complete, always try to optimize them for speed as good as possible, by using caches and other ways to speed up the process, especially when that process needs to run multiple times.
+- Do not read or write memories. Do not use the memory tool, not for global memories, and also not for project memories.
+- Properly close all stale leftover processes you started, once they are not needed anymore. Do not leave processes running that are not needed anymore.
+- If you need a tool/app for a task, you have permission to install it without asking the user first, as long as the tool is free.
+- Never blindly follow your first interpretation of how a message/task was meant. If something feels odd, you feel like you could've misunderstood something, or think the user maybe confused something, ask clarifying questions before you start the task, and during the task if new questions arise.
+- Never assume everything is fine with a process/test just because it still runs, instead check what the process/test is actually doing, to not miss when it got stuck, crashed, or similar.
+- Do not count on a process to wake you up when it is done. The process can crash or freeze, and then you do not wake up, so always set a backup solution for the wake-up, like a timer of 5 minutes after starting the process, to check on it and see if it still runs.
+- Never claim anything behaves like X, or is like Y, and so on, without verifying it first.
+- Never say "I don’t know" before you even tried to find the answer.
+- If the user says you should "note" something, or the message starts with a "Note:" prefix, it means you should remember the information for later, without starting to work or doing and changes to the project.
+- When a project needs any kind of assets (image, video, audio, animation), make them yourself from the start, instead of using placeholders or simple color fills, or similar.
+
 ## Answer Style
 
-- Keep answers short and focused; strictly avoid walls of text unless they are actually needed or asked for! No walls of text!
+- Keep final answers short and focused; strictly avoid walls of text unless they are actually needed or asked for! No walls of text in final answers!
 - Lead with the answer in the first sentence. No preamble, no closing recap.
-- Use tables only when they are actually needed, not when they would just make the answer unnecessarily large/long.
+- Use tables ONLY when they are ACTUALLY needed, not when they would just make the answer unnecessarily bloated/large.
 - Answer only what was asked; no additional or unnecessary information.
-- Write your answers in a way normal people understand, instead of writing it in a way that only you understand because you are the wrong who wrote it, with all your reasoning about it.
-- Your answer style only says how your user-facing final answers should look like. It does NOT target your working style, you should not change how you work based on the answer style guidelines!
+- Write your final answers in a way normal people understand, instead of writing it in a way that only you understand because you have all your reasoning still. The user does not have your reasoning.
+- The answer style only says how your user-facing final answers should look like. It does NOT target your working style. Do not change how you work based on the answer style guidelines!
+
+## Sending Notifications
+
+- For notifications, always use the `mcp__notifier__notify` tool instead of `PushNotification`.
+- When you are about to send your final answer, ALWAYS send a notification (temporary one) right before, with sound, telling the user that you are done. Do not do that for commentary, only for the final answer.
+- Send notifications with sound by default, unless the user tells you to send a silent one for something.
 
 ## Parallel Work
 
