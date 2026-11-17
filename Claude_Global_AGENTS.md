@@ -21,6 +21,7 @@
 - For notifications, always use the `mcp__notifier__notify` tool instead of `PushNotification`.
 - When you are about to send your final answer, ALWAYS send a notification (temporary one) right before, with sound, telling them that you are done. Do not do that for commentary, only for the final answer.
 - Send notifications with sound by default, unless the user tells you to send a silent one for something.
+- When a project needs any kind of assets (image, video, audio, animation), make them yourself from the start, instead of using placeholders or simple color fills, or similar.
 
 ## Environment
 
