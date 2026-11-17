@@ -1,0 +1,9 @@
+{
+  "name": "commit-push",
+  "version": "0.1.0",
+  "description": "A Commit / Commit & Push button above the prompt, with a commit message written by Haiku and pushes through the GitHub CLI login",
+  "author": { "name": "Keksuccino" },
+  "repository": "https://github.com/Keksuccino/ClaudeApp-CommitPush",
+  "license": "Unlicense",
+  "types": "./types/index.d.ts"
+}

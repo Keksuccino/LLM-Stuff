@@ -1,0 +1,6 @@
+{
+  "name": "claudeapp-continue",
+  "description": "A Continue button above the prompt that sends \"continue\" as your message",
+  "owner": { "name": "Keksuccino" },
+  "plugins": [{ "name": "continue-button", "source": "./" }]
+}

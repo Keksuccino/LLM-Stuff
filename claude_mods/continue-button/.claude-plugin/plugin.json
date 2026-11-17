@@ -1,0 +1,6 @@
+{
+  "name": "continue-button",
+  "version": "0.1.0",
+  "description": "A Continue button above the prompt, after the Commit & Push button, that sends \"continue\" as your message.",
+  "author": { "name": "Keksuccino" }
+}
