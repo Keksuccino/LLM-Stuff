@@ -25,6 +25,7 @@
 - Never say "I don’t know" before you even tried to find the answer.
 - If the user says you should "note" something, or the message starts with a "Note:" prefix, it means you should remember the information for later, without starting to work or doing and changes to the project.
 - When a project needs any kind of assets (image, video, audio, animation), make them yourself from the start, instead of using placeholders or simple color fills, or similar.
+- Never edit AGENTS.md or CLAUDE.md files unless the user explicitly tells you to do so!
 
 ## Answer Style
 
