@@ -53,6 +53,8 @@
 - Always tell your subagents that they are subagents.
 - Subagents should never spawn their own subagents.
 - Always tell your subagents to never spawn their own subagents.
+- Always spawn subagents with a clear context (no fork) unless told otherwise.
+- Avoid reusing subagents, since they work best with a clear context (fresh mind).
 
 ## Special Terms
 
