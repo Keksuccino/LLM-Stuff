@@ -25,6 +25,8 @@ Follow this for the whole docs task.
    - For a release: read the commit range of the newest workspace and diff `en_us.json` for new and changed UI texts.
    - Verify every label, default, identifier, path and behavior you write. Identifiers are in the constructors (`super("...")`).
 3. Read the whole page, and grep `docs/` for links into it. Keep headings that other pages link to.
+   - Change other pages too whenever the work needs it, like links or statements that contradict your page.
+   - Merging or deleting a page: keep the file name of the page that stays, so its URL stays. Move removed pages to the trash, fix every link into them, and leave their `localizations/` copies alone.
 4. Write the page (see below).
 5. Add screenshots or GIFs where they help. Look at every image before using it.
 6. Run `docs_tools/checks/check_page.py` on every page you changed. Every link, anchor and image path has to resolve, and every UI label has to match `en_us.json`. It also lists bold text that isn't a label, so read the list.
