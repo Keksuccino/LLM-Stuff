@@ -26,7 +26,7 @@
 - If the user says you should "note" something, or the message starts with a "Note:" prefix, it means you should remember the information for later, without starting to work or doing and changes to the project.
 - When a project needs any kind of assets (image, video, audio, animation), make them yourself from the start, instead of using placeholders or simple color fills, or similar.
 - Never edit AGENTS.md or CLAUDE.md files unless the user explicitly tells you to do so!
-- When writing guides or instructions for yourself or future agents in projects, make sure to double-check that there are no top-level/global guidelines mirrored in there. Never mirror top-level guidelines and instructions in project docs/instructions/guidelines, because these are already provided to agents and could change at any time.
+- When writing guides or instructions for yourself or future agents in projects, make sure to double-check that there are no top-level/global guidelines mirrored in there. Never mirror top-level guidelines and instructions in project docs/instructions/guidelines, because these are already provided to agents and could change at any time. Instructions from this document here for example should never end up in project documents.
 
 ## Answer Style
 
