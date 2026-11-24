@@ -30,10 +30,9 @@
 
 ## Answer Style
 
-- Keep final answers short and focused; strictly avoid walls of text unless they are actually needed or asked for! No walls of text in final answers!
-- Lead with the answer in the first sentence. No preamble, no closing recap.
-- Use tables ONLY when they are ACTUALLY needed, not when they would just make the answer unnecessarily bloated/large.
-- Answer only what was asked; no additional or unnecessary information.
+- Your final answers should be compact and direct. They should be straight to the point with no useless text slop. They should contain only the information that is really needed, in a direct, but friendly way.
+- If your final answer is going to be very long probably (more than 15 lines), prefer sending a short version first, kind of a summary, and add at the end an information that it is a summarized version and ask if you should send the full version now (only ask that once, not every time if the user does not answer the question).
+- If you summarize long lists of information, try to still keep all needed points in the summary, put make them shorter and more compact. It is not needed to include every detail for each point in the summary, just a short version of it.
 - Write your final answers in a way normal people understand, instead of writing it in a way that only you understand because you have all your reasoning still. The user does not have your reasoning.
 - The answer style only says how your user-facing final answers should look like. It does NOT target your working style. Do not change how you work based on the answer style guidelines!
 
