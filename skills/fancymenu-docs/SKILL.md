@@ -40,6 +40,7 @@ Follow this for the whole docs task.
 - Keep this style even when older pages don't have it.
 - Describe how things work, not how they changed. Never write "new", "now" or "since 3.x". Old-layout behavior is a plain fact: "Elements from older layouts have them off."
 - UI labels exactly as in the game, in bold and without their value, but with suffixes like `[HEX]`: **Text Content**, **Show Background**, **Scroll Grabber Color [HEX]**. Menu paths with `->`: **menu bar -> Customization -> Profiles**.
+- Bold isn't limited to UI labels. The page checker lists other bold text only so you can read it over, not as errors.
 - Shortcuts in code style: `Ctrl + B`, with "(`Cmd` on macOS)" where it applies.
 - Everything with `$$` is a variable: the user's own, `$$value` of sliders and checkboxes, `$$list_entry` of For Each loops and the ones listeners give. Never call them values or placeholders, and don't mention that the mod calls them values in some places.
 - Short sections and paragraphs. Lists for steps and options. Tables only for real reference data (settings with explanations, syntax overviews).
