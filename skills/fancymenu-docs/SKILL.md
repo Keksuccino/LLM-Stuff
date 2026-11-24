@@ -15,7 +15,8 @@ Follow this for the whole docs task.
   - `localizations/`: automated translations. Never edit them.
 - Pages get read from GitHub but shown on docs.fancymenu.net, so images need full URLs.
 - Source of truth: the FancyMenu workspaces (`fancymenu-<mc version>`, newest first). UI texts: `common/src/main/resources/assets/fancymenu/lang/en_us.json`.
-- Tools for images and page checks: `/Volumes/STUFF/CODING/WORKSPACES/Java/Minecraft Mods/fancymenu_agent_root/docs_tools/`. Read its `README.md` before making images.
+- Tools for images and page checks: `/Volumes/STUFF/CODING/WORKSPACES/Java/Minecraft Mods/fancymenu_agent_root/docs_tools/`. Read its `README.md` before making images. Commit and push changes to them right away (branch `agent_root`).
+- This skill: installed in `~/.claude/skills/fancymenu-docs/`, kept in `Keksuccino/LLM-Stuff` at `skills/fancymenu-docs/SKILL.md`. When you change it, change both and push.
 
 # Workflow
 
@@ -27,7 +28,7 @@ Follow this for the whole docs task.
 4. Write the page (see below).
 5. Add screenshots or GIFs where they help. Look at every image before using it.
 6. Run `docs_tools/checks/check_page.py` on every page you changed. Every link, anchor and image path has to resolve, and every UI label has to match `en_us.json`. It also lists bold text that isn't a label, so read the list.
-7. Commit messages: `docs: <what changed>`. Push to `wiki-2026`, then check that every new image URL returns 200.
+7. Commit and push every change to `wiki-2026` right away, without being asked: the pages go live from GitHub. Commit messages: `docs: <what changed>`. Then check that every new image URL returns 200.
 8. In your report, list every place where the page mentions something its target page doesn't document yet (actions, placeholders, requirements, listeners, shortcuts, settings).
 
 # Writing Style
