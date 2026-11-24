@@ -30,7 +30,7 @@ Follow this for the whole docs task.
 4. Write the page (see below).
 5. Add screenshots or GIFs where they help. Look at every image before using it.
 6. Run `docs_tools/checks/check_page.py` on every page you changed. Every link, anchor and image path has to resolve, and every UI label has to match `en_us.json`. It also lists bold text that isn't a label, so read the list.
-7. Commit and push every change to `wiki-2026` right away, without being asked: the pages go live from GitHub. Commit messages: `docs: <what changed>`. Then check that every new image URL returns 200.
+7. Commit and push every change to `wiki-2026` right away, without being asked: the pages go live from GitHub. Commit messages: `docs: <what changed>`. Then check that every new image URL returns 200. The site (Vicky) only picks up changes on its refresh interval, or when the user clicks **Refresh docs** in its admin panel, so the live site can lag behind.
 8. In your report, list every place where the page mentions something its target page doesn't document yet (actions, placeholders, requirements, listeners, shortcuts, settings).
 
 # Writing Style
