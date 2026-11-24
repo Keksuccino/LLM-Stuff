@@ -57,7 +57,7 @@ Follow this for the whole docs task.
 
 # Screenshots and GIFs
 
-- Always real in-game renders from an off-screen test client, made with `docs_tools`. Never mockups.
+- Always real in-game renders from an off-screen test client, made with `docs_tools`. Never mockups of the game. Only things outside of the game, like the Alice chat on the Export for AI page, get drawn, and only when the user asks for them.
 - Screenshots: crop to the feature with a bit of background around it, at GUI scale 2. Optimize with `oxipng`.
 - GIFs: one workflow each, about 20 to 30 seconds and about 1 MB.
   - Show the cursor, a ripple for every click and a badge for every key combination.
