@@ -47,14 +47,14 @@ Follow this for the whole docs task.
 - Code blocks for everything users type, with realistic examples a modpack maker would write.
   - Element IDs of custom elements are long random strings, so never make up readable ones like `join_button`. Use Vanilla IDs like `mc_titlescreen_multiplayer_button` and point to **Copy Element ID**.
 - Admonitions, sparingly: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`.
-- Link related pages with `/`: `[Placeholders](/placeholders)`. Anchors are GitHub-style slugs: `/listeners#on-markdown-text-clicked-text_clicked`. Never `./page`: the site only keeps links that start with `/`, `#`, `http(s):` or `mailto:`, and turns the rest into `#`.
+- Link related pages with `/`: `[Placeholders](/placeholders)`. Anchors are GitHub-style slugs: `/listeners#on-markdown-text-clicked`. Never `./page`: the site only keeps links that start with `/`, `#`, `http(s):` or `mailto:`, and turns the rest into `#`.
 - Keep guide pages (how to use a feature) apart from reference pages (syntax, lists), and link both ways with a TIP near the top.
 
 # Page Format
 
 - Front matter: only `title` and `description`.
 - `# Title` first, then `#` for main sections and `##`/`###` below.
-- In list pages (actions, placeholders, requirements, listeners), copy the entry format the page already uses, like ``## Name (`identifier`)``.
+- List pages (actions, requirements, placeholders, listeners, elements, decoration overlays) all use the same structure: `# All <Things>` with one intro sentence, then `##` categories, then `###` entries named like in the game. Entries with an identifier say it right below their heading, as `**Identifier:** `show_toast``. Never put identifiers into headings.
 - Images: `<img width="<native width, max 800>" alt="<what it shows>" src="https://raw.githubusercontent.com/Keksuccino/docs_fancymenu/refs/heads/wiki-2026/assets/<file>?raw=true">`
 - Asset names: lowercase with underscores, by topic, like `markdown_lists.png` or `text_editor_showcase.gif`.
 
