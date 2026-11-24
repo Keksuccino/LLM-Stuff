@@ -33,6 +33,7 @@
 - When using number steppers, use step sizes that make sense. Avoid 1-step steps for values that often get set to big numbers.
 - Features should be reachable with as few clicks as possible. Avoid making the user click through multiple sub-menus or similar, when the feature could also be made available in an easier way.
 - UI element labels use title case: capitalize every word except articles, conjunctions and short prepositions (a, an, the, and, or, but, to, of, in, on, at, for, by, with), which stay lowercase unless they are the first or last word. Examples: "Add a Section", "Reset to Original".
+- Never put dots at the end of a label (".." or "..."), like "Quit Game...". It should instead say "Quit Game".
 
 ## Front-End Standards
 
