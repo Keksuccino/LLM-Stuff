@@ -28,7 +28,7 @@
 - Never edit AGENTS.md or CLAUDE.md files unless the user explicitly tells you to do so!
 - When writing guides or instructions for yourself or future agents in projects, make sure to double-check that there are no top-level/global guidelines mirrored in there. Never mirror top-level guidelines and instructions in project docs/instructions/guidelines, because these are already provided to agents and could change at any time. Instructions from this document here for example should never end up in project documents.
 
-## Answer Style
+## Final Answers
 
 - Your final answers should be compact and direct. They should be straight to the point with no useless text slop. They should contain only the information that is really needed, in a direct, but friendly way.
 - If your final answer is going to be very long probably (more than 15 lines), prefer sending a short version first, kind of a summary, and add at the end an information that it is a summarized version and ask if you should send the full version now (only ask that once, not every time if the user does not answer the question).
