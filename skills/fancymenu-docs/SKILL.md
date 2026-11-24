@@ -44,6 +44,7 @@ Follow this for the whole docs task.
 - Everything with `$$` is a variable: the user's own, `$$value` of sliders and checkboxes, `$$list_entry` of For Each loops and the ones listeners give. Never call them values or placeholders, and don't mention that the mod calls them values in some places.
 - Short sections and paragraphs. Lists for steps and options. Tables only for real reference data (settings with explanations, syntax overviews).
 - Code blocks for everything users type, with realistic examples a modpack maker would write.
+  - Element IDs of custom elements are long random strings, so never make up readable ones like `join_button`. Use Vanilla IDs like `mc_titlescreen_multiplayer_button` and point to **Copy Element ID**.
 - Admonitions, sparingly: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`.
 - Link related pages with `/`: `[Placeholders](/placeholders)`. Anchors are GitHub-style slugs: `/listeners#on-markdown-text-clicked-text_clicked`. Never `./page`: the site only keeps links that start with `/`, `#`, `http(s):` or `mailto:`, and turns the rest into `#`.
 - Keep guide pages (how to use a feature) apart from reference pages (syntax, lists), and link both ways with a TIP near the top.
