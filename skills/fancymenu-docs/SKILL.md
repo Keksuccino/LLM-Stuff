@@ -1,0 +1,65 @@
+---
+name: fancymenu-docs
+description: Workflow, writing style and image tools for FancyMenu's END-USER-FACING documentation (the Keksuccino/docs_fancymenu repo, shown on docs.fancymenu.net). Invoke this skill FIRST, before reading or changing anything, whenever you update, rewrite, add, remove, review or plan pages of the FancyMenu docs, or make screenshots or GIFs for them. Do NOT invoke it for FancyMenu code, code comments, Javadoc, developer docs, changelogs or Markdown files inside the mod workspaces (like TESTING_GUIDELINES.md).
+---
+
+# FancyMenu Docs
+
+Follow this for the whole docs task.
+
+# Where Things Are
+
+- Repo: `Keksuccino/docs_fancymenu`, branch `wiki-2026`. Local clone: `/Volumes/STUFF/CODING/WORKSPACES/Java/Minecraft Mods/docs_fancymenu`.
+  - `docs/`: the pages. The only text you edit.
+  - `assets/`: images and GIFs of the pages.
+  - `localizations/`: automated translations. Never edit them.
+- Pages get read from GitHub but shown on docs.fancymenu.net, so images need full URLs.
+- Source of truth: the FancyMenu workspaces (`fancymenu-<mc version>`, newest first). UI texts: `common/src/main/resources/assets/fancymenu/lang/en_us.json`.
+- Image tools: `/Volumes/STUFF/CODING/WORKSPACES/Java/Minecraft Mods/fancymenu_agent_root/docs_tools/`. Read its `README.md` before making images.
+
+# Workflow
+
+1. Update the clone: `git fetch` and `git merge --ff-only origin/wiki-2026` (clean tree only).
+2. Find out what's true now, in the code. Commits, changelogs and old pages are hints, not proof.
+   - For a release: read the commit range of the newest workspace and diff `en_us.json` for new and changed UI texts.
+   - Verify every label, default, identifier, path and behavior you write. Identifiers are in the constructors (`super("...")`).
+3. Read the whole page, and grep `docs/` for links into it. Keep headings that other pages link to.
+4. Write the page (see below).
+5. Add screenshots or GIFs where they help. Look at every image before using it.
+6. Check that every link, anchor and image path resolves and every UI label matches `en_us.json`.
+7. Commit messages: `docs: <what changed>`. Push to `wiki-2026`, then check that every new image URL returns 200.
+8. In your report, list every place where the page mentions something its target page doesn't document yet (actions, placeholders, requirements, listeners, shortcuts, settings).
+
+# Writing Style
+
+- Readers are players and modpack makers, not developers. Write for someone who isn't tech-savvy.
+- Compact, direct and friendly. Only what's needed: no filler, no marketing, no repeating.
+- Keep this style even when older pages don't have it.
+- Describe how things work, not how they changed. Never write "new", "now" or "since 3.x". Old-layout behavior is a plain fact: "Elements from older layouts have them off."
+- UI labels exactly as in the game, in bold and without their value: **Text Content**, **Show Background**. Menu paths with `->`: **menu bar -> Customization -> Profiles**.
+- Shortcuts in code style: `Ctrl + B`, with "(`Cmd` on macOS)" where it applies.
+- Short sections and paragraphs. Lists for steps and options. Tables only for real reference data (settings with explanations, syntax overviews).
+- Code blocks for everything users type, with realistic examples a modpack maker would write.
+- Admonitions, sparingly: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`.
+- Link related pages: `[Placeholders](./placeholders)`. Anchors are GitHub-style slugs: `./listeners#on-markdown-text-clicked-text_clicked`.
+- Keep guide pages (how to use a feature) apart from reference pages (syntax, lists), and link both ways with a TIP near the top.
+
+# Page Format
+
+- Front matter: only `title` and `description`.
+- `# Title` first, then `#` for main sections and `##`/`###` below.
+- In list pages (actions, placeholders, requirements, listeners), copy the entry format the page already uses, like ``## Name (`identifier`)``.
+- Images: `<img width="<native width, max 800>" alt="<what it shows>" src="https://raw.githubusercontent.com/Keksuccino/docs_fancymenu/refs/heads/wiki-2026/assets/<file>?raw=true">`
+- Asset names: lowercase with underscores, by topic, like `markdown_lists.png` or `text_editor_showcase.gif`.
+
+# Screenshots and GIFs
+
+- Always real in-game renders from an off-screen test client, made with `docs_tools`. Never mockups.
+- Screenshots: crop to the feature with a bit of background around it, at GUI scale 2. Optimize with `oxipng`.
+- GIFs: one workflow each, about 20 to 30 seconds and about 1 MB.
+  - Show the cursor, a ripple for every click and a badge for every key combination.
+  - Readable at 800 px width: FancyMenu UI scale **colossal**.
+  - Hide distractions (editor grid, editor widgets) and hold the result for a few seconds at the end.
+- Use the Pixel look and the defaults of new elements, unless the page is about something else.
+- Example texts must make sense to readers, like patch notes, welcome texts or rules. Text elements replace placeholders everywhere, even in code, so don't put placeholders in examples that should show as text.
+- The harness only gets copied into a workspace while recording. Never commit it there.
