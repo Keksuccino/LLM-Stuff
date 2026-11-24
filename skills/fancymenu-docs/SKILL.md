@@ -44,7 +44,7 @@ Follow this for the whole docs task.
 - Short sections and paragraphs. Lists for steps and options. Tables only for real reference data (settings with explanations, syntax overviews).
 - Code blocks for everything users type, with realistic examples a modpack maker would write.
 - Admonitions, sparingly: `> [!NOTE]`, `> [!TIP]`, `> [!IMPORTANT]`, `> [!WARNING]`, `> [!CAUTION]`.
-- Link related pages: `[Placeholders](./placeholders)`. Anchors are GitHub-style slugs: `./listeners#on-markdown-text-clicked-text_clicked`.
+- Link related pages with `/`: `[Placeholders](/placeholders)`. Anchors are GitHub-style slugs: `/listeners#on-markdown-text-clicked-text_clicked`. Never `./page`: the site only keeps links that start with `/`, `#`, `http(s):` or `mailto:`, and turns the rest into `#`.
 - Keep guide pages (how to use a feature) apart from reference pages (syntax, lists), and link both ways with a TIP near the top.
 
 # Page Format
