@@ -60,12 +60,15 @@ Follow this for the whole docs task.
 
 # Screenshots and GIFs
 
-- Always real in-game renders from an off-screen test client, made with `docs_tools`. Never mockups of the game. Only things outside of the game, like the Alice chat on the Export for AI page, get drawn, and only when the user asks for them.
+- Three kinds of images, each with its own rule:
+  - **Images of the game** (screens, menus, the editor, elements, worlds): always real renders from an off-screen test client, made with `docs_tools`. Never draw or mock up anything that shows the game.
+  - **Images arranged from real renders**: fine without asking. Crops, shots side by side, before and after, the six images of a panorama laid out as an unfolded cube, with labels, arrows or frames on top. They only arrange real renders, so they don't count as drawn.
+  - **Drawn images**: only for things outside of the game, like the Alice chat on the Export for AI page, and only when the user asks for them.
 - Handmade pixel art for what the images show is welcome, like backgrounds, parallax layers, logos or button textures.
   - Invoke the `asset-guidelines` skill first, every time you make assets for the docs.
   - Give them the quality of real game assets, as if they shipped in a modpack. Never make them quickly or lazily, or with a mockup in mind that only has to look good enough for one picture.
   - Draw them yourself with a script in the page's `docs_tools/configs/` folder (like `configs/parallax_page/make_layers.py`). Never use image generation tools.
-  - Never draw what a real world can show, like a world behind the pause screen or the HUD. Record or screenshot it in an actual world instead.
+  - Never draw what a real world can show, like a world behind the pause screen, the HUD or a panorama. Record or screenshot it in an actual world instead (`docs_tools/world_harness/` builds a scene with commands and captures panoramas of it).
 - Screenshots: crop to the feature with a bit of background around it, at GUI scale 2. Optimize with `oxipng`.
 - GIFs: one workflow each, about 20 to 30 seconds and about 1 MB.
   - Show the cursor, a ripple for every click and a badge for every key combination.
