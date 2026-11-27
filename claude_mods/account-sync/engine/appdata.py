@@ -10,9 +10,10 @@ Layout, as the app keeps it under ~/Library/Application Support/Claude:
 - claude-code-sessions/<account>/<org>/archived-sessions.idx: the ids of the archived sessions, a hint the app reads at
   start-up. It must list exactly the sessions whose file says isArchived, so it is rewritten whenever a sync changes
   that folder.
-- ccd-session-presets.json: the saved environments, under byAccount.<account>. Environment variables saved for an
-  environment are kept elsewhere, keyed by the environment's id and shared by all accounts, so keeping ids unchanged
-  carries them over.
+- ccd-session-presets.json: a mirror of each account's saved environments, under byAccount.<account>. The app keeps the
+  environments themselves in its web storage and rewrites this mirror from there at every launch (see catalog.py).
+  Environment variables saved for an environment are kept elsewhere, keyed by the environment's id and shared by all
+  accounts, so keeping ids unchanged carries them over.
 
 The app keeps all of this in memory while it runs and writes over outside changes, so nothing here may be written
 while the app runs.

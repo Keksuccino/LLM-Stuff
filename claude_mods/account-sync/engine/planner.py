@@ -21,6 +21,8 @@ from typing import Callable, Dict, List, Optional, Set, Tuple
 
 from appdata import MAX_PRESET_CATALOG_BYTES, MAX_PRESETS_PER_ACCOUNT, Profile, ProfileScan, SessionFile
 
+PRESETS_SOURCE = "web-storage"
+
 
 @dataclass
 class Baseline:
@@ -35,18 +37,20 @@ class Baseline:
     @classmethod
     def from_json(cls, data: Optional[dict]) -> "Baseline":
         data = data or {}
-        return cls(
-            profiles=set(data.get("profiles", [])),
-            sessions=dict(data.get("sessions", {})),
-            preset_accounts=set(data.get("presetAccounts", [])),
-            presets=dict(data.get("presets", {})),
-            built_ins=data.get("builtIns"),
-        )
+        baseline = cls(profiles=set(data.get("profiles", [])), sessions=dict(data.get("sessions", {})))
+        # Environments read from the mirror file instead of the app's web storage are no baseline: the app had
+        # overwritten what was synced into the mirror, so taking them as such would read as deletions.
+        if data.get("presetsSource") == PRESETS_SOURCE:
+            baseline.preset_accounts = set(data.get("presetAccounts", []))
+            baseline.presets = dict(data.get("presets", {}))
+            baseline.built_ins = data.get("builtIns")
+        return baseline
 
     def to_json(self) -> dict:
         return {
             "profiles": sorted(self.profiles),
             "sessions": dict(sorted(self.sessions.items())),
+            "presetsSource": PRESETS_SOURCE,
             "presetAccounts": sorted(self.preset_accounts),
             "presets": dict(sorted(self.presets.items())),
             "builtIns": self.built_ins,

@@ -15,6 +15,8 @@ ENGINE = Path(__file__).resolve().parent.parent / "engine"
 sys.path.insert(0, str(ENGINE))
 
 import appdata  # noqa: E402
+import webstore  # noqa: E402
+from catalog import store_key  # noqa: E402
 from syncer import Engine  # noqa: E402
 from state import StateStore  # noqa: E402
 
@@ -46,9 +48,22 @@ class AppFixture:
         (self.app / "plugin-list" / ACCOUNT_A / ORG_A).mkdir(parents=True)
         (self.app / "plugin-list" / ACCOUNT_B / ORG_B).mkdir(parents=True)
         (self.app / "config.json").write_text(json.dumps({"lastKnownAccountUuid": ACCOUNT_B, "oauth:tokenCache": "x"}))
+        self.web = webstore.LocalStorage(webstore.local_storage_dir(self.app))
+        self._make_web_storage()
         self.write_presets({ACCOUNT_A: {"presets": [], "seededFromDraft": True},
                             ACCOUNT_B: {"presets": [], "seededFromDraft": True}})
         self.clock = int(time.time()) - 10_000
+
+    def _make_web_storage(self) -> None:
+        """An empty leveldb as Chromium leaves one: CURRENT, a manifest naming log 3, and that empty log."""
+        path = self.web.path
+        path.mkdir(parents=True)
+        (path / "CURRENT").write_text("MANIFEST-000001\n")
+        edit = (b"\x01" + webstore._encode_varint(len(webstore.COMPARATOR)) + webstore.COMPARATOR
+                + b"\x02\x03\x03\x04\x04\x00")
+        (path / "MANIFEST-000001").write_bytes(b"")
+        webstore.append_log_record(path / "MANIFEST-000001", edit)
+        (path / "000003.log").write_bytes(b"")
 
     def engine(self) -> Engine:
         return Engine(self.app, StateStore(self.state))
@@ -74,12 +89,27 @@ class AppFixture:
         path = self.dirs[account] / "archived-sessions.idx"
         return json.loads(path.read_text())["archived"] if path.exists() else None
 
-    def write_presets(self, by_account: dict) -> None:
+    def write_presets(self, by_account: dict, mirror: bool = True) -> None:
+        """Sets each account's environments where the app keeps them (its web storage), and in the mirror file."""
+        for account, entry in by_account.items():
+            state = {**entry, "fileMirrored": True, "placeDefaults": {"local::/x": {"effort": "max"}}}
+            self.web.write({store_key(account): json.dumps({"state": state, "version": 4}, ensure_ascii=False)})
+        if mirror:
+            self.write_mirror(by_account)
+
+    def write_mirror(self, by_account: dict) -> None:
         (self.app / "ccd-session-presets.json").write_text(json.dumps({"byAccount": by_account}, indent="\t"))
 
+    def store(self, account: str):
+        value = self.web.read(store_key(account)).get(store_key(account))
+        return None if value is None else json.loads(value)
+
     def presets(self, account: str) -> list:
-        data = json.loads((self.app / "ccd-session-presets.json").read_text())
-        return data["byAccount"][account]["presets"]
+        """The environments as the app reads them, after checking the mirror file agrees."""
+        web = self.store(account)["state"]["presets"]
+        mirror = json.loads((self.app / "ccd-session-presets.json").read_text())["byAccount"][account]["presets"]
+        assert web == mirror, (web, mirror)
+        return web
 
 
 def preset(pid: str, name: str, last_used: int = 1, folder: str = "/tmp/x") -> dict:
@@ -219,6 +249,56 @@ class EngineTests(unittest.TestCase):
         data = json.loads((self.fx.app / "ccd-session-presets.json").read_text())
         self.assertTrue(data["byAccount"][ACCOUNT_B]["seededFromDraft"])
         self.assertEqual(len(data["byAccount"][ACCOUNT_B]["presets"]), 1)
+
+    def test_the_apps_web_storage_wins_over_a_stale_mirror(self):
+        # As the app leaves it after a launch: B's web storage holds no environment, whatever the mirror says.
+        self.fx.write_presets({ACCOUNT_A: {"presets": [preset("p1", "🌸 | Alice")]}, ACCOUNT_B: {"presets": []}},
+                              mirror=False)
+        self.fx.write_mirror({ACCOUNT_A: {"presets": [preset("p1", "🌸 | Alice")]},
+                              ACCOUNT_B: {"presets": [preset("p1", "🌸 | Alice")]}})
+        self.assertEqual(self.fx.engine().preview()["changes"][ACCOUNT_B]["environmentsAdded"], 1)
+        self.sync()
+        self.assertEqual([p["name"] for p in self.fx.presets(ACCOUNT_B)], ["🌸 | Alice"])
+        # The rest of the account's store stays as the app wrote it.
+        state = self.fx.store(ACCOUNT_B)["state"]
+        self.assertEqual(state["placeDefaults"], {"local::/x": {"effort": "max"}})
+        self.assertTrue(state["fileMirrored"])
+
+    def test_a_baseline_read_from_the_mirror_deletes_no_environment(self):
+        self.fx.write_presets({ACCOUNT_A: {"presets": [preset("p1", "Alice")]}, ACCOUNT_B: {"presets": []}})
+        self.sync()
+        # The baseline an earlier version wrote: environments read from the mirror, known in both accounts.
+        state_file = self.fx.state / "state.json"
+        data = json.loads(state_file.read_text())
+        del data["baseline"]["presetsSource"]
+        state_file.write_text(json.dumps(data))
+        self.fx.write_presets({ACCOUNT_A: {"presets": [preset("p1", "Alice")]}, ACCOUNT_B: {"presets": []}})
+        self.assertEqual(self.fx.engine().preview()["changes"][ACCOUNT_A]["environmentsRemoved"], 0)
+        self.sync()
+        self.assertEqual([p["id"] for p in self.fx.presets(ACCOUNT_A)], ["p1"])
+        self.assertEqual([p["id"] for p in self.fx.presets(ACCOUNT_B)], ["p1"])
+
+    def test_an_account_without_a_store_gets_one(self):
+        self.fx.write_presets({ACCOUNT_A: {"presets": [preset("p1", "Alice")], "seededFromDraft": True}},
+                              mirror=False)
+        self.fx.write_mirror({ACCOUNT_A: {"presets": [preset("p1", "Alice")], "seededFromDraft": True}})
+        self.fx.web.write({store_key(ACCOUNT_B): None})
+        self.sync()
+        store = self.fx.store(ACCOUNT_B)
+        self.assertEqual([p["id"] for p in store["state"]["presets"]], ["p1"])
+        self.assertTrue(store["state"]["seededFromDraft"])
+        self.assertEqual(store["version"], 4)
+
+    def test_undo_puts_back_the_web_storage(self):
+        self.fx.write_presets({ACCOUNT_A: {"presets": [preset("p1", "Alice")]}}, mirror=False)
+        self.fx.write_mirror({ACCOUNT_A: {"presets": [preset("p1", "Alice")]}})
+        self.fx.web.write({store_key(ACCOUNT_B): None})
+        before_a = self.fx.store(ACCOUNT_A)
+        self.sync()
+        self.assertIsNotNone(self.fx.store(ACCOUNT_B))
+        self.assertTrue(self.fx.engine().run_action("undo", None)["ok"])
+        self.assertIsNone(self.fx.store(ACCOUNT_B))
+        self.assertEqual(self.fx.store(ACCOUNT_A), before_a)
 
     def test_undo_puts_back_every_file_and_the_baseline(self):
         self.fx.session(ACCOUNT_A, SID_1)

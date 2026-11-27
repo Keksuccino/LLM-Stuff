@@ -30,7 +30,9 @@ toast says how it went. **Undo Last Sync** puts back everything the last sync ch
   sessions follow too. The conversations themselves are already shared on disk (`~/.claude/projects`); the app only
   keeps a separate session list per account, and that list is what gets synced.
 - Every saved environment (added, edited, deleted), and the defaults of the built-in Local environment. Environments
-  keep their ids, so sessions stay grouped under them and saved environment variables keep applying.
+  keep their ids, so sessions stay grouped under them and saved environment variables keep applying. The app keeps
+  them in its web storage (Chromium Local Storage) and only mirrors them into `ccd-session-presets.json`, so the sync
+  writes both.
 
 Not synced: cloud sessions and cloud environments (stored on Anthropic's servers per account), Cowork, scheduled tasks
 and connectors.
@@ -46,7 +48,7 @@ and connectors.
 
 - The app's files are only changed while the app is closed, since it writes over outside changes while it runs.
 - Every run backs up what it changes first, to `~/.claude/account-sync/backups` (the newest 10 runs are kept; older ones
-  go to the Trash).
+  go to the Trash). A run that changes environments also keeps a copy of the whole web storage database there.
 - A run that would delete more sessions than the preview showed, or most of an account's sessions, is refused.
 
 ## Engine

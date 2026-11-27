@@ -12,6 +12,7 @@ from typing import Callable, Optional
 
 import appctl
 import appdata
+import catalog
 import executor
 import planner
 from state import StateStore, SyncState
@@ -48,21 +49,20 @@ class Engine:
     def _scan(self, state: SyncState):
         profiles, passed_over = appdata.discover_profiles(self.app_dir)
         scans = [appdata.scan_profile(profile, state.cache) for profile in profiles]
-        document = appdata.read_presets(self.app_dir)
+        catalogs = catalog.read_catalogs(self.app_dir, sorted({p.account for p in profiles}))
         active = appdata.active_account(self.app_dir)
-        plan = planner.make_plan(scans, document, state.baseline, active, _now_ms())
-        return scans, passed_over, document, active, plan
+        plan = planner.make_plan(scans, catalogs.document(), state.baseline, active, _now_ms())
+        return scans, passed_over, catalogs, active, plan
 
     def preview(self) -> dict:
         state = self._load_state()
-        scans, passed_over, document, active, plan = self._scan(state)
+        scans, passed_over, catalogs, active, plan = self._scan(state)
         self.store.save(state)
-        by_account = document.get("byAccount") or {}
         accounts = []
         for scan in scans:
             account = scan.profile.account
             archived = appdata.read_archive_index(scan.profile) or set()
-            entry = by_account.get(account) if isinstance(by_account.get(account), dict) else {}
+            entry = catalogs.by_account.get(account, {})
             accounts.append({
                 "id": account,
                 "email": state.account_emails.get(account),
@@ -86,7 +86,7 @@ class Engine:
 
     def sync(self, max_removals: Optional[int]) -> dict:
         state = self._load_state()
-        scans, _, _, _, plan = self._scan(state)
+        scans, _, catalogs, _, plan = self._scan(state)
         if len(scans) < 2:
             raise Refused("Only one account has Code sessions on this Mac, so there is nothing to sync.")
         removals = sum(1 for op in plan.session_ops if op.kind == "remove")
@@ -100,7 +100,7 @@ class Engine:
                     raise Refused(f"The sync would delete {count} of {len(scan.sessions)} sessions in one account, "
                                   "which looks like a misread folder. Nothing was changed.")
         before = state.baseline if state.has_baseline else None
-        run_id = executor.apply_plan(plan, self.app_dir, self.store.backups_dir, before, state.cache)
+        run_id = executor.apply_plan(plan, self.app_dir, self.store.backups_dir, before, state.cache, catalogs)
         state.baseline = plan.baseline_after
         state.has_baseline = True
         self.store.save(state)
@@ -119,7 +119,7 @@ class Engine:
         last = self.store.last_run() or {}
         if last.get("kind") != "sync" or not last.get("undoable") or not last.get("backup"):
             raise Refused("There is no sync to undo.")
-        baseline_before = executor.undo_run(self.store.backups_dir, last["backup"])
+        baseline_before = executor.undo_run(self.store.backups_dir, last["backup"], self.app_dir)
         state = self.store.load()
         state.baseline = planner.Baseline.from_json(baseline_before)
         state.has_baseline = baseline_before is not None
