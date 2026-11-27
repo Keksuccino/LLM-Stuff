@@ -1,0 +1,7 @@
+{
+  "name": "account-sync",
+  "version": "0.1.0",
+  "description": "Keeps the desktop app's Code sessions and saved environments the same in every Claude account on this Mac: /sync-accounts opens a preview and syncs both ways.",
+  "author": { "name": "Keksuccino" },
+  "types": "./types/index.d.ts"
+}

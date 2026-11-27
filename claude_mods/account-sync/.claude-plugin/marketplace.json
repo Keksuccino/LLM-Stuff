@@ -1,0 +1,6 @@
+{
+  "name": "claudeapp-accountsync",
+  "description": "Keeps the desktop app's Code sessions and environments the same in every Claude account on this Mac",
+  "owner": { "name": "Keksuccino" },
+  "plugins": [{ "name": "account-sync", "source": "./" }]
+}
