@@ -1,0 +1,6 @@
+{
+  "name": "claudeapp-commitpush",
+  "description": "Commit & Push and Ask for Push buttons for Claude Code, above the prompt",
+  "owner": { "name": "Keksuccino" },
+  "plugins": [{ "name": "commit-push", "source": "./" }]
+}
