@@ -24,6 +24,21 @@ Type `/sync-accounts` in any session. A pane shows each account and what a sync 
 quits Claude, syncs, and opens Claude again; sessions that are running at that moment get stopped. After the restart a
 toast says how it went. **Undo Last Sync** puts back everything the last sync changed (and restarts Claude the same way).
 
+## Sidebar sorting
+
+The app forgets the order you dragged the sidebar's groups into (environments, repositories, folders) whenever you
+switch accounts, and falls back to its default order. The mod saves the whole sidebar layout every 10 minutes while a
+Code session is open, keeping the last 20 different layouts, from every account. A layout is the group order together
+with the settings it depends on: grouping, sorting, which sections and options show, custom and starred groups, pinned
+projects and folded groups. Folding a group alone doesn't count as a new layout.
+
+- `/restore-sorting` lists the saved layouts. **Restore** puts one back for the signed-in account: Claude quits, the
+  layout is written, and Claude opens again. The layout in use before is saved first, so a restore can be taken back.
+- `/snapshot-sorting` saves the current layout right away (the pane's **Save Current Layout** does the same).
+
+A layout saved in one account works in the other, as long as both have the same environments (which the sync takes
+care of). Pinned and starred sessions aren't part of it: they belong to sessions, and switching accounts keeps them.
+
 ## What it syncs
 
 - Every local Code session in the sidebar: in environments, in folders and without a folder. Archived and deleted
@@ -60,7 +75,7 @@ Claude is closed:
 /usr/bin/python3 -B ~/.claude/mods/account-sync/engine plan
 ```
 
-The commands are `plan`, `status`, `run`, `undo` and `launch`. Its state and log live in `~/.claude/account-sync`.
+The commands are `plan`, `status`, `run`, `undo`, `launch`, `sorting-list` and `sorting-snapshot`. Its state and log live in `~/.claude/account-sync`.
 
 ## Tests
 

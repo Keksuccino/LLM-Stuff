@@ -1,5 +1,5 @@
-"""Runs a sync or an undo: the preview, the guards against a misread folder, the lock, and the worker that quits and
-reopens the app around a run.
+"""Runs a sync, an undo or a sidebar order restore: the preview, the guards against a misread folder, the lock, and the
+worker that quits and reopens the app around a run.
 """
 
 from __future__ import annotations
@@ -15,6 +15,7 @@ import appdata
 import catalog
 import executor
 import planner
+import sorting
 from state import StateStore, SyncState
 
 # Without a preview to compare with, a run that would empty more than half of an account's sessions is taken for a
@@ -38,6 +39,7 @@ class Engine:
     def __init__(self, app_dir: Path, store: StateStore):
         self.app_dir = app_dir
         self.store = store
+        self.sorting = sorting.SortingStore(store.root)
 
     def _load_state(self) -> SyncState:
         state = self.store.load()
@@ -159,14 +161,55 @@ class Engine:
             self.store.save_last_run(result)
 
 
-def worker(engine: Engine, action: str, max_removals: Optional[int], control_app: bool) -> Callable[[], int]:
+    def sorting_overview(self) -> dict:
+        """The snapshot history, and the digest of the layout each account has now, to tell which one is in use."""
+        state = self._load_state()
+        current = sorting.current_digests(self.app_dir)
+        return {
+            "ok": True,
+            "snapshots": self.sorting.history()["snapshots"],
+            "activeAccount": appdata.active_account(self.app_dir),
+            "emails": state.account_emails,
+            "current": current,
+            "lastRestore": self.sorting.last_restore(),
+            "isWorking": self.store.is_locked(),
+        }
+
+    def snapshot_sorting(self, trigger: str) -> dict:
+        return {"ok": True, **sorting.capture(self.app_dir, self.sorting, trigger, _now_ms())}
+
+    def run_restore_sorting(self, snapshot_id: str) -> dict:
+        """Puts a snapshot back as the signed-in account's sidebar layout, under the lock, and records the result."""
+        try:
+            with self.store.lock():
+                try:
+                    account = appdata.active_account(self.app_dir)
+                    if account is None:
+                        raise Refused("Couldn't tell which account is signed in, so no order was changed.")
+                    result = {"kind": "restore-sorting", "ok": True, "finishedAt": _now_ms(),
+                              **sorting.restore(self.app_dir, self.sorting, snapshot_id, account, _now_ms())}
+                except (Refused, LookupError) as refusal:
+                    result = {"kind": "restore-sorting", "ok": False, "finishedAt": _now_ms(), "error": str(refusal)}
+                except Exception as error:  # Reported to the pane; the details go to the log.
+                    traceback.print_exc()
+                    result = {"kind": "restore-sorting", "ok": False, "finishedAt": _now_ms(),
+                              "error": f"{type(error).__name__}: {error}"}
+                self.sorting.save_last_restore(result)
+                return result
+        except BlockingIOError:
+            return {"kind": "restore-sorting", "ok": False, "finishedAt": _now_ms(),
+                    "error": "A sync or restore is already running."}
+
+
+def worker(engine: Engine, name: str, task: Callable[[], dict], control_app: bool) -> Callable[[], int]:
+    """The detached worker's body: quit the app, run the task, open the app again whatever happened."""
     def run() -> int:
-        _log(f"worker started: {action}")
+        _log(f"worker started: {name}")
         bundle = None
         try:
             if control_app:
                 bundle = appctl.quit_app(_log)
-            result = engine.run_action(action, max_removals)
+            result = task()
             _log(f"result: {json.dumps(result)}")
             return 0 if result.get("ok") else 1
         finally:
