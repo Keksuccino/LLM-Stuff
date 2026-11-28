@@ -7,6 +7,7 @@
 ## General Guidelines
 
 - In all messages, prefix reported successes with ✅, errors with ❌, and warnings with ⚠️. Use ❌/⚠️ only for actual errors/warnings, never their absence.
+- If the question is "Is something X" and your answer is "No", never use the ✅ emoji, instead use ❌ and vice-versa.
 - When you ask the user something in answers, want them to make a decision, or approve something, always prefix the question/part with 🟣.
 - Do not run `rm` commands! Move files to the trash instead.
 - The trash is for TRASH. Everything you move to it is considered "deleted". Never move something there that you still need.
