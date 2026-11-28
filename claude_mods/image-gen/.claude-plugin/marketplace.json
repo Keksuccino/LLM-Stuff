@@ -1,0 +1,6 @@
+{
+  "name": "claudeapp-imagegen",
+  "description": "A generate_image tool for Claude, powered by OpenRouter's image models",
+  "owner": { "name": "Keksuccino" },
+  "plugins": [{ "name": "image-gen", "source": "./" }]
+}

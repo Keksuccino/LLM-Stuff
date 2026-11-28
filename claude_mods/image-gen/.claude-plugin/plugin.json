@@ -1,0 +1,7 @@
+{
+  "name": "image-gen",
+  "version": "0.1.0",
+  "description": "Gives Claude a generate_image tool that makes and edits images through OpenRouter; /image-gen-settings picks the model and API key.",
+  "author": { "name": "Keksuccino" },
+  "types": "./types/index.d.ts"
+}
